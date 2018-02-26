@@ -6,4 +6,6 @@ p {
 h1 {
     font-weight: bold;
     font-family: Purisa;
+    background: gray;
+    box-shadow: 5px 5px;
 }
