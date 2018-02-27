@@ -1,20 +1,19 @@
-
-p {
-    font-size: 15px;
-    font-family: Inconsolata;
-}
-
-h1 {
-    background: gray;
-
-}
-
-h2 {
-    font-family: FreeMono;
-
-}
-
-#all-articles h2+p {
-    font-size: 20px;
+article p:first-of-type {
+    color: green;
     font-weight: bolder;
+
+}
+
+article p:last-of-type{
+    color: yellow;
+}
+
+
+
+
+
+hr {
+    background-color: red;
+    width: 100%;
+
 }
