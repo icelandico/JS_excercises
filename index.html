@@ -10,46 +10,68 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
+
     </head>
 
-    <body id="top">
+    <body>
 
-        <img src="img/panda1.jpg" alt="panda">
+    <div id="top"></div>
 
-        <h1>Welcome to my test page</h1>
+        <div id="#header">
+            <img src="img/panda1.jpg" alt="panda">
+            <h1>Welcome to my test page</h1>
+            <p>Please try not to throw up</p>
 
-        <p>Please try not to throw up</p>
+        </div>
 
-        <ol>
-            <li><a href="anchor/anchor1.html" target="_blank">Anchor page</a></li>
-            <li><a href="http://boredpanda.com">Panda site</a></li>
+        <div id="navigation">
+            <a onclick="alert('CAUTION PANDA DETECTED');" href="anchor/anchor1.html" target="_blank">Anchor page</a><br/>
+            <a href="http://boredpanda.com">Panda site</a>
 
-        </ol>
+        </div>
 
+        <div id="how-to">
+        <h2>How to obtain a Panda:</h2>
+            <ul>
+                <li>Go to website</li>
+                <li>Choose a panda</li>
+                <ol>
+                    <li>Choose proper type</li>
+                    <li>Choose propoer color</li>
+                </ol>
+                <li>Buy a panda</li>
 
+            </ul>
+        </div>
 
+        <div class="lists">
+            <h1>Another list</h1>
+
+            <dl>
+                <dt>Unordered</dt>
+                <dd>Unordered list is a list without any...</dd>
+                <dt>Ordered list</dt>
+                <dd>Definition list</dd>
+                <dt>Another list to show</dt>
+                <dd>This list shall be made in a proper manner</dd>
+            </dl>
+
+        </div>
+
+        <div>
         <h2>What I want to learn soon:</h2>
             <ul>
                 <li>HTML syntax</li>
                 <li>Master CSS</li>
                 <li>Master Bootstrap</li>
             </ul>
+        </div>
 
-        <p>Hello World! I try to test <small>myself</small></p>
-        <p>Hello World! I try to test <mark>myself</mark></p>
-        <p>Hello World! I try to test <sub>myself</sub></p>
-        <p>Hello World! I try to test <sup>myself</sup></p>
-
-
-
-        <h3>This is a super page about Panda</h3>
-        <h4>Take a look</h4>
-        <h5>Don't go...</h5>
-        <h6>Test heading 6</h6>
-
+        <div>
         <button class="btn btn-primary">CLICK HERE</button><br/>
-
         <a href="#top">Go back to Panda TOP</a>
+        </div>
 
 
     </body>
