@@ -1,18 +1,30 @@
 #main-content {
     width: 1200px;
-    padding: 10px;
+    padding: 2%;
     margin: auto;
     background: gray;
 }
 
-.block {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #000;
+
+#banner1 {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(77,100,100);
+
 }
 
-.inline {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #000;
+#banner2 {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(77,100,100);
+
 }
+
+#banner3 {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(77,100,100);
+
+}
+
+
