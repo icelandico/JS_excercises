@@ -3,13 +3,27 @@
     padding: 2%;
     margin: auto;
     background: gray;
+    position: relative;
 }
 
 
-#banner1 {
-    width: 200px;
-    height: 200px;
-    background-color: rgb(77,100,100);
+.button {
+    display: block;
+    color: fff;
+    width: 100px;
+    padding: 12px;
+    background: #aaaadd;
+    background: -moz-linear-gradient(top, #ffaa 0%, #77aaff 100%);
+    background: -webkit-linear-gradient(top, #ffaa 0%, #77aaff 100%);
+    background: linear-gradient(top, #ffaa 0%, #77aaff 100%);
+    box-shadow: 2px 2px 4px 2px;
+}
+
+.button:hover {
+    background: #77aadd;
+    background: -moz-linear-gradient(bottom, #ffaa 0%, #77aaff 100%);
+    background: -webkit-linear-gradient(bottom, #ffaa 0%, #77aaff 100%);
+    background: linear-gradient(top, #ffaa 0%, #77aaff 100%);
 
 }
 
