@@ -11,10 +11,14 @@ body {
     font-family: "Helvetica Neue";
     max-height: 135px;
     overflow: hidden;
+
+    -webkit-transition: max-height 0.7s;
+    transition: max-height 0.7s;
 }
 
-#content-open {
+#content.open {
     max-height: 410px;
+    -webkit-transition: max-height 0.7s;
     transition: max-height 0.7s;
 }
 
