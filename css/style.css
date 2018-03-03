@@ -12,14 +12,14 @@ body {
     max-height: 135px;
     overflow: hidden;
 
-    -webkit-transition: max-height 0.7s;
-    transition: max-height 0.7s;
+    -webkit-transition: max-height 1s;
+    transition: max-height 1s;
 }
 
 #content.open {
     max-height: 410px;
-    -webkit-transition: max-height 0.7s;
-    transition: max-height 0.7s;
+    -webkit-transition: max-height 1s;
+    transition: max-height 1s;
 }
 
 #show-more {
