@@ -1,5 +1,5 @@
-var myVar = $("#content p:last-child");
+var myVar = $("#content p:nth-child(2)");
 
-myVar.mouseenter(function() {
-    alert("YOU ENTERED PARAPGRAPH!");
+myVar.hover(function() {
+    myVar.css({'background-color', 'red'});
 });
