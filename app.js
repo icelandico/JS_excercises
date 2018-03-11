@@ -1,5 +1,4 @@
-var myVar = $("#content p:nth-child(2)");
+var rep= "wha#t. a s_toR-y";
+var rep2 = rep.toLowerCase().replace(/\W|_/g, "");
 
-myVar.hover(function() {
-    myVar.css({'background-color', 'red'});
-});
+console.log(rep2);
