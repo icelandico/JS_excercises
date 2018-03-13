@@ -17,7 +17,7 @@ largestOfFour([[13,27,18,26], [4,5,1,3],[32,35,37,39], [1000,1001,857,1]]);
 */
 
 // Checks if the string ('target') is the ending string of phrase ('str')
-
+/*
     function confirmEnding(str, target) {
         var last = str.substr(-(target.length));
         console.log(last);
@@ -39,8 +39,27 @@ function confirmEnding(str, target) {
 };
 
 confirmEnding("This is a test string", "ing");
+*/
 
-//
+// Repeats the string given times ('num') - no .repeat() method used!
+
+function repeatStringNumTimes(str, num) {
+    var i = num;
+    var str2 = "";
+    while (i > 0) {
+        str2 += str;
+        i--;
+
+    }
+    console.log(str2);
+
+}
+
+repeatStringNumTimes("SuDo", 7);
+
+
+
+
 
 
 
