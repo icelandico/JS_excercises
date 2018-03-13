@@ -42,7 +42,7 @@ confirmEnding("This is a test string", "ing");
 */
 
 // Repeats the string given times ('num') - no .repeat() method used!
-
+/*
 function repeatStringNumTimes(str, num) {
     var i = num;
     var str2 = "";
@@ -56,6 +56,25 @@ function repeatStringNumTimes(str, num) {
 }
 
 repeatStringNumTimes("SuDo", 7);
+*/
+// Truncates the string by number ('num') and adds ("...") in place of truncated string
+
+// Calculates Years to get desired sum of money
+
+function calculateYears(principal, interest, tax, desired) {
+    var Y = 0;
+    if (principal != desired) {
+        while (principal <= desired) {
+            principal += ((interest * principal) - (tax * interest * principal));
+            Y++;
+        }
+
+    }
+    console.log(Y);
+
+}
+
+calculateYears(1000, 0.05, 0.18, 1000);
 
 
 
