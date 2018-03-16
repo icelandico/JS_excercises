@@ -76,6 +76,24 @@ function calculateYears(principal, interest, tax, desired) {
 
 calculateYears(1000, 0.05, 0.18, 1000);
 
+// Truncates a string by given number (num) and adds ("...")
+
+function truncateString(str, num) {
+    if (str.length > num) {
+        console.log(str.slice(0,num-3)) + "...";
+    }
+    else if (num<=3) {
+        console.log(str.slice(0, num)) + "...";
+
+    }
+    else {
+        console.log(str);
+    }
+
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length);
+
 
 
 
