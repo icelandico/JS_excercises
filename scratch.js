@@ -96,6 +96,7 @@ truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket
 
 */
 // Creates new array that consist of arrays basing on size
+/*
 function chunkArrayInGroups(arr, size) {
     var arr2 = [];
     for (i=0; i < arr.length; i+=size) {
@@ -105,9 +106,18 @@ function chunkArrayInGroups(arr, size) {
 
 }
 
-chunkArrayInGroups(["a", "b", "c", "d", "e"], 2);
+chunkArrayInGroups(["a", "b", "c", "d", "e"], 4);
+
+*/
+
+// Return the remaining elements of an array after chopping off 'n' elements from the head (beginning)
+
+function slasher(arr, howMany) {
+    console.log(arr.splice(0,howMany);
+
+}
 
 
-
+slasher([1,2,3], 2);
 
 
