@@ -60,7 +60,7 @@ repeatStringNumTimes("SuDo", 7);
 // Truncates the string by number ('num') and adds ("...") in place of truncated string
 
 // Calculates Years to get desired sum of money
-
+/*
 function calculateYears(principal, interest, tax, desired) {
     var Y = 0;
     if (principal != desired) {
@@ -94,8 +94,18 @@ function truncateString(str, num) {
 
 truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length);
 
+*/
+// Creates new array that consist of arrays basing on size
+function chunkArrayInGroups(arr, size) {
+    var arr2 = [];
+    for (i=0; i < arr.length; i+=size) {
+        arr2.push(arr.slice(i, i+size));
+    }
+    console.log(arr2);
 
+}
 
+chunkArrayInGroups(["a", "b", "c", "d", "e"], 2);
 
 
 
