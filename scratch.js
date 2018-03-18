@@ -111,7 +111,7 @@ chunkArrayInGroups(["a", "b", "c", "d", "e"], 4);
 */
 
 // Return the remaining elements of an array after chopping off 'n' elements from the head (beginning)
-
+/*
 function slasher(arr, howMany) {
     console.log(arr.splice(0,howMany);
 
@@ -119,5 +119,24 @@ function slasher(arr, howMany) {
 
 
 slasher([1,2,3], 2);
+
+*/
+
+// Returns true if the string in the first element of the array contains all of the letters from second array element
+
+function mutation(arr) {
+    var newArr = arr[1].toLowerCase().split("");
+
+    for (i=0; i<newArr.length; i++) {
+        if (arr[0].toLowerCase().indexOf(newArr[i]) < 0) {
+            console.log(false);
+        }
+        console.log(true);
+
+    } console.log(newArr);
+
+}
+
+mutation(["hello", "hey"]);
 
 
