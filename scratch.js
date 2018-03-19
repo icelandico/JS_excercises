@@ -24,10 +24,10 @@ largestOfFour([[13,27,18,26], [4,5,1,3],[32,35,37,39], [1000,1001,857,1]]);
 
         if (target.toLowerCase() == last.toLowerCase()) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
+
     }
 
     confirmEnding("This is a test string", "ing");
@@ -49,10 +49,8 @@ function repeatStringNumTimes(str, num) {
     while (i > 0) {
         str2 += str;
         i--;
-
     }
     console.log(str2);
-
 }
 
 repeatStringNumTimes("SuDo", 7);
@@ -68,9 +66,7 @@ function calculateYears(principal, interest, tax, desired) {
             principal += ((interest * principal) - (tax * interest * principal));
             Y++;
         }
-
-    }
-    console.log(Y);
+    } console.log(Y);
 
 }
 
@@ -81,14 +77,13 @@ calculateYears(1000, 0.05, 0.18, 1000);
 function truncateString(str, num) {
     if (str.length > num) {
         console.log(str.slice(0,num-3)) + "...";
-    }
-    else if (num<=3) {
+    } else if (num<=3) {
         console.log(str.slice(0, num)) + "...";
 
-    }
-    else {
+    } else {
         console.log(str);
     }
+
 
 }
 
@@ -117,13 +112,12 @@ function slasher(arr, howMany) {
 
 }
 
-
 slasher([1,2,3], 2);
 
 */
 
 // Returns true if the string in the first element of the array contains all of the letters from second array element
-
+/*
 function mutation(arr) {
     var newArr = arr[1].toLowerCase().split("");
 
@@ -138,5 +132,18 @@ function mutation(arr) {
 }
 
 mutation(["hello", "hey"]);
+*/
 
+// Remove all falsy values from an array
+
+function bouncer(arr) {
+    var newFalsy = arr.filter(function (val) {
+        return Boolean(val) === true;
+
+    });
+    console.log(newFalsy);
+
+}
+
+bouncer([7, "ate", "", false, 9]);
 
