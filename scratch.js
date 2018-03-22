@@ -135,7 +135,7 @@ mutation(["hello", "hey"]);
 */
 
 // Remove all falsy values from an array
-
+/*
 function bouncer(arr) {
     var newFalsy = arr.filter(function (val) {
         return Boolean(val) === true;
@@ -146,4 +146,36 @@ function bouncer(arr) {
 }
 
 bouncer([7, "ate", "", false, 9]);
+*/
 
+//Uncipher the text! Using ROT13 cipher code
+
+function rot13(str) {
+    var a = Array.prototype.map.call(str,function (x) {
+        return x.charCodeAt(x);
+    });
+
+    console.log(a);
+    var b = a.map(function (y) {
+        if (y !== 32 && y < 77 && y >= 65) {
+            return y+13;
+        }
+        else if (y !== 32 && y > 77 && y <=90) {
+            return y-13;
+        }
+         else if(y < 65 || y > 90 ) {
+            return y;
+        }
+        else {
+            return 32;
+        }
+
+    });
+    console.log(b);
+
+    console.log(String.fromCharCode.apply(null, b));
+
+    }
+
+
+    rot13("SERR YBIR!");
