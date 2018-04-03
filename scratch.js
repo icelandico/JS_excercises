@@ -149,7 +149,7 @@ bouncer([7, "ate", "", false, 9]);
 */
 
 //Uncipher the text! Using ROT13 cipher code
-
+/*
 function rot13(str) {
     var a = Array.prototype.map.call(str,function (x) {
         return x.charCodeAt(x);
@@ -176,6 +176,24 @@ function rot13(str) {
     console.log(String.fromCharCode.apply(null, b));
 
     }
-
-
     rot13("SERR YBIR!");
+*/
+
+// Build a tower using "*" !
+
+function towerBuilder(nFloors) {
+    var arr = [];
+    i = 1;
+    a = 1;
+    while (i <= (nFloors*2)-1) {
+        arr.push(" ".repeat(nFloors-a) + "*".repeat(i) + " ".repeat(nFloors-a));
+        i += 2;
+        a += 1;
+    }
+    console.log(arr);
+}
+
+towerBuilder(2);
+
+
+
