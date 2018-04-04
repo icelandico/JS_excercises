@@ -180,7 +180,7 @@ function rot13(str) {
 */
 
 // Build a tower using "*" !
-
+/*
 function towerBuilder(nFloors) {
     var arr = [];
     i = 1;
@@ -194,6 +194,16 @@ function towerBuilder(nFloors) {
 }
 
 towerBuilder(2);
+*/
+
+// Capitalize first letter of word in given string
+
+String.prototype.toJadenCase = function () {
+    console.log(str.split(" ").map(x => x[0].toUpperCase() + x.substr(1).toLowerCase()).join(" "));
+
+};
+var str = "bla bla nanan eee aere re qwqe"
+str.toJadenCase()
 
 
 
