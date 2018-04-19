@@ -201,6 +201,56 @@
 //
 // validate('12eeeTzz');
 
+// 15. Your goal in this kata is to implement a difference function, which subtracts one list from another and
+// returns the result. It should remove all values from list a, which are present in list b.
+
+// function array_diff(a, b) {
+//     var x = [];
+//     if (b.length > 0) {
+//         for(i = 0; i < a.length; i++) {
+//             for(z = 0; z < b.length; z++) {
+//                 if (a[i] != b[z]) {
+//                     x.push(a[i])
+//                 }
+//             }
+//         }
+//     } else {
+//         console.log(a)
+//     }
+//     console.log(x);
+// }
+
+// Shorthand:
+//
+// function array_diff(a, b) {
+//     console.log(a.filter(function(x) {
+//         return b.indexOf(x) == -1; }));
+// }
+//
+// array_diff([1,2,2], []);
+
+// 16. Given an array of numbers (a list in groovy), determine whether the sum of all of the numbers is odd or even.
+
+// function oddOrEven(array) {
+//     var x = 0;
+//     for (i=0; i < array.length; i++) {
+//         x += array[i];
+//     }
+//     if (x%2 == 0 ) {
+//         return 'even'
+//     } else {
+//         return 'odd'
+//     }
+//
+// }
+
+// Using reduce();
+
+// function oddOrEven(x) {
+//     console.log(x.reduce(function(x, y) {return x + y}));
+//     }
+//
+// oddOrEven([1,2,3,98]);
 
 
 
