@@ -315,22 +315,69 @@
 // if that character appears only once in the original string, or ')' if that character appears more than once in the
 // original string.
 
-function duplicateEncode(word){
-    var word = word.toLowerCase().split("");
-    var count = {};
-    var counter = word.map(function (x) {
-        count[x] = (count[x] || 0) + 1;
-    });
-    var result = word.map(function (y) {
-        if (count[y] > 1) {
-            return ')';
+// function duplicateEncode(word){
+//     var word = word.toLowerCase().split("");
+//     var count = {};
+//     var counter = word.map(function (x) {
+//         count[x] = (count[x] || 0) + 1;
+//     });
+//     var result = word.map(function (y) {
+//         if (count[y] > 1) {
+//             return ')';
+//         } else {
+//             return '('
+//         }
+//     });
+//     return result.join("")
+// }
+// console.log(duplicateEncode("Aaa b cc n"));
+
+// 21. Transform given string to Nato phonetic standard
+
+var natoAlphabet = {
+    "A": "Alfa",
+    "B": "Bravo",
+    "C": "Charlie",
+    "D": "Delta",
+    "E": "Echo",
+    "F": "Foxtrot",
+    "G": "Golf",
+    "H": "Hotel",
+    "I": "India",
+    "J": "Juliett",
+    "K": "Kilo",
+    "L": "Lima",
+    "M": "Mike",
+    "N": "November",
+    "O": "Oscar",
+    "P": "Papa",
+    "Q": "Quebec",
+    "R": "Romeo",
+    "S": "Sierra",
+    "T": "Tango",
+    "U": "Uniform",
+    "V": "Victor",
+    "W": "Whiskey",
+    "X": "Xray",
+    "Y": "Yankee",
+    "Z": "Zulu"
+};
+
+function to_nato(words) {
+    words = words.toUpperCase().split("").filter(x => x.match(/[\S]/));
+    var result = (words.map(function(x) {
+        if (x in natoAlphabet) {
+            return natoAlphabet[x]
         } else {
-            return '('
+            return x;
         }
-    });
-    return result.join("")
+    }));
+    return result.join(" ");
 }
-console.log(duplicateEncode("Aaa b cc n"));
+
+console.log(to_nato("If You can read!"));
+
+
 
 
 
