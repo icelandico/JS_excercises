@@ -115,27 +115,25 @@
 
 // function rot13(str) {
 //     var a = Array.prototype.map.call(str,function (x) {
-//         return x.charCodeAt(x);
+//         return x.charCodeAt(0);
 //     });
-//     console.log(a);
 //     var b = a.map(function (y) {
-//         if (y !== 32 && y < 77 && y >= 65) {
+//         if (y < 77 && y >= 65 || (y >= 97 && y < 110)) {
 //             return y+13;
 //         }
-//         else if (y !== 32 && y > 77 && y <=90) {
+//         else if (y > 77 && y <=90 || (y <= 122 && y >= 110)) {
 //             return y-13;
 //         }
-//          else if(y < 65 || y > 90 ) {
+//          else if (y < 65) {
 //             return y;
 //         }
 //         else {
 //             return 32;
 //         }
 //     });
-//     console.log(b);
-//     console.log(String.fromCharCode.apply(null, b));
-//     }
-//     rot13("SERR YBIR!");
+//     return(String.fromCharCode.apply(null, b));
+// }
+//     console.log(rot13('11qbwwnaalkvaemi'));
 
 // 10. Build a tower using "*" !
 
@@ -166,12 +164,24 @@
 //     word in the string. The JavaScript/CoffeeScript tests will pass undefined when this argument is unused
 
 // function titleCase(title, minorWords) {
-//     var a = minorWords.split(" ");
+//     var b = minorWords.split(" ").map(x => x.toUpperCase());
+//     var a = title.split(" ").map(x => x.toUpperCase());
 //
-//     console.log(title.split(" ").map(x => x[0].toUpperCase() + x.substr(1)));
+//     // var c = (title.split(" ").map(x => x[0][0].toUpperCase() + x.substr(1).toLowerCase()).join(' '));
+//     // var a = (title.split(" ").map(x => x.substr(1).toLowerCase()).join(' '));
+//     console.log(a, b);
+//     for(i = 0; i < a.length; i++) {
+//         for(y = 1; y < b.length; y++){
+//             if(a[i] === b[y]) {
+//                 a[i] =  a[i].toLowerCase();
+//             }
+//         }
+//     }
+//
+//     console.log(a.join(' '));
 // }
-
-// titleCase("helo There my Friend", "my")
+//
+// titleCase('a clash of KINGS', 'a an the of');
 
 // 13. How many times to fold a piece of paper to reach a given distance in meters? Paper has a thickness of 0.0001 m.
 
@@ -188,7 +198,6 @@
 // foldTo(384000000);
 
 //  14. You need to write regex that will validate a password to make sure it meets the following criteria:
-//
 //
 // contains a lowercase letter
 // contains an uppercase letter
@@ -241,7 +250,6 @@
 //     } else {
 //         return 'odd'
 //     }
-//
 // }
 
 // Using reduce();
@@ -252,5 +260,42 @@
 //
 // oddOrEven([1,2,3,98]);
 
+// 17. Given two speeds v1 (A's speed, integer > 0) and v2 (B's speed, integer > 0) and a lead g (integer > 0) how long
+//     will it take B to catch A? The result will be an array [hour, min, sec] which is the time needed in hours,
+//     minutes and seconds (don't worry for fractions of second).
+
+// function race(v1, v2, g) {
+//     var time = [];
+//     var t = (g/(v2-v1)*3600);
+//
+//     var hours = Math.floor(t/ 3600);
+//     var minutes = Math.floor(t%3600/60);
+//     var seconds = Math.floor(t%3600%60);
+//     console.log(t);
+//     time.push(hours, minutes, seconds);
+//     console.log(time)
+// }
+//
+// race(80,91,37);
+
+/// 18. "Given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)"
+
+//     var products = [
+//         { name: "Sonoma", ingredients: ["artichoke", "sundried tomatoes", "mushrooms"], containsNuts: false },
+//         { name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false },
+//         { name: "South Of The Border", ingredients: ["black beans", "jalapenos", "mushrooms"], containsNuts: false },
+//         { name: "Blue Moon", ingredients: ["blue cheese", "garlic", "walnuts"], containsNuts: true },
+//         { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true }
+//     ];
+//
+// var productsICanEat = [];
+//
+// var abc = products.filter(function (x) {
+//     return !x.containsNuts && !x.ingredients.some(function (a) {
+//         return a === 'mushrooms'
+//     })
+// })
+//
+// console.log(abc);
 
 
