@@ -311,5 +311,26 @@
 //
 // console.log(pangram("The quick brown fox jumps over the lazy dog.!?"));
 
+// 20. The goal of this exercise is to convert a string to a new string where each character in the new string is '('
+// if that character appears only once in the original string, or ')' if that character appears more than once in the
+// original string.
+
+function duplicateEncode(word){
+    var word = word.toLowerCase().split("");
+    var count = {};
+    var counter = word.map(function (x) {
+        count[x] = (count[x] || 0) + 1;
+    });
+    var result = word.map(function (y) {
+        if (count[y] > 1) {
+            return ')';
+        } else {
+            return '('
+        }
+    });
+    return result.join("")
+}
+console.log(duplicateEncode("Aaa b cc n"));
+
 
 
