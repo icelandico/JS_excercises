@@ -334,48 +334,63 @@
 
 // 21. Transform given string to Nato phonetic standard
 
-var natoAlphabet = {
-    "A": "Alfa",
-    "B": "Bravo",
-    "C": "Charlie",
-    "D": "Delta",
-    "E": "Echo",
-    "F": "Foxtrot",
-    "G": "Golf",
-    "H": "Hotel",
-    "I": "India",
-    "J": "Juliett",
-    "K": "Kilo",
-    "L": "Lima",
-    "M": "Mike",
-    "N": "November",
-    "O": "Oscar",
-    "P": "Papa",
-    "Q": "Quebec",
-    "R": "Romeo",
-    "S": "Sierra",
-    "T": "Tango",
-    "U": "Uniform",
-    "V": "Victor",
-    "W": "Whiskey",
-    "X": "Xray",
-    "Y": "Yankee",
-    "Z": "Zulu"
-};
+// var natoAlphabet = {
+//     "A": "Alfa",
+//     "B": "Bravo",
+//     "C": "Charlie",
+//     "D": "Delta",
+//     "E": "Echo",
+//     "F": "Foxtrot",
+//     "G": "Golf",
+//     "H": "Hotel",
+//     "I": "India",
+//     "J": "Juliett",
+//     "K": "Kilo",
+//     "L": "Lima",
+//     "M": "Mike",
+//     "N": "November",
+//     "O": "Oscar",
+//     "P": "Papa",
+//     "Q": "Quebec",
+//     "R": "Romeo",
+//     "S": "Sierra",
+//     "T": "Tango",
+//     "U": "Uniform",
+//     "V": "Victor",
+//     "W": "Whiskey",
+//     "X": "Xray",
+//     "Y": "Yankee",
+//     "Z": "Zulu"
+// };
+//
+// function to_nato(words) {
+//     words = words.toUpperCase().split("").filter(x => x.match(/[\S]/));
+//     var result = (words.map(function(x) {
+//         if (x in natoAlphabet) {
+//             return natoAlphabet[x]
+//         } else {
+//             return x;
+//         }
+//     }));
+//     return result.join(" ");
+// }
+//
+// console.log(to_nato("If You can read!"));
 
-function to_nato(words) {
-    words = words.toUpperCase().split("").filter(x => x.match(/[\S]/));
-    var result = (words.map(function(x) {
-        if (x in natoAlphabet) {
-            return natoAlphabet[x]
-        } else {
-            return x;
-        }
-    }));
-    return result.join(" ");
-}
+// 22. Replace every letter with its position in the alphabet. If anything in the text isn't a letter, ignore it and
+//     on't return it.
 
-console.log(to_nato("If You can read!"));
+// function alphabetPosition(text) {
+//     var alpha = 'abcdefghijklmnopqrstuvwxyz'.split("");
+//     var abc = text.split("").filter(x => x.match(/^[A-Za-z]+$/));
+//     var result = [];
+//     for (i=0; i < abc.length; i++) {
+//         result.push(alpha.indexOf(abc[i])+1);
+//     }
+//     return result.join(" ");
+// }
+//
+// console.log(alphabetPosition("p@-k_}.5"));
 
 
 
