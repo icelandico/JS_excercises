@@ -278,16 +278,17 @@
 //
 // race(80,91,37);
 
-/// 18. "Given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)"
+// 18. "Given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat". This is one of the
+//      'Koans' exercise.
 
-//     var products = [
-//         { name: "Sonoma", ingredients: ["artichoke", "sundried tomatoes", "mushrooms"], containsNuts: false },
-//         { name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false },
-//         { name: "South Of The Border", ingredients: ["black beans", "jalapenos", "mushrooms"], containsNuts: false },
-//         { name: "Blue Moon", ingredients: ["blue cheese", "garlic", "walnuts"], containsNuts: true },
-//         { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true }
-//     ];
-//
+    // var products = [
+    //     { name: "Sonoma", ingredients: ["artichoke", "sundried tomatoes", "mushrooms"], containsNuts: false },
+    //     { name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false },
+    //     { name: "South Of The Border", ingredients: ["black beans", "jalapenos", "mushrooms"], containsNuts: false },
+    //     { name: "Blue Moon", ingredients: ["blue cheese", "garlic", "walnuts"], containsNuts: true },
+    //     { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true }
+    // ];
+
 // var productsICanEat = [];
 //
 // var abc = products.filter(function (x) {
@@ -297,6 +298,34 @@
 // })
 //
 // console.log(abc);
+
+    // var products = [
+    //     { name: "Sonoma", ingredients: ["artichoke", "sundried tomatoes", "mushrooms"], containsNuts: false },
+    //     { name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false },
+    //     { name: "South Of The Border", ingredients: ["black beans", "jalapenos", "mushrooms"], containsNuts: false },
+    //     { name: "Blue Moon", ingredients: ["blue cheese", "garlic", "walnuts"], containsNuts: true },
+    //     { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true }
+    // ];
+    //
+    // var ingredientCount = { "{ingredient name}": 0 };
+
+//     var ingredientCount = products.chain()
+// //         .map(function(x) {
+// //             if (products["ingredients"] = )
+// //         });
+// //
+// //     /* chain() together map(), flatten() and reduce() */
+// //     console.log(ingredientCount("mushrooms"));
+// // });
+
+// _(products).chain()
+//     .map(function(product) { return product.ingredients; })
+//     .flatten()
+//     .reduce(function(list, ingredient) {
+//         ingredientCount[ingredient] = (ingredientCount[ingredient] || 0) + 1;
+//     });
+//
+//     console.log(ingredientCount['mushrooms']);
 
 // 19. Detect Pangram sentence. Ignore signs different than letters.
 
@@ -391,6 +420,8 @@
 // }
 //
 // console.log(alphabetPosition("p@-k_}.5"));
+
+
 
 
 
