@@ -421,7 +421,17 @@
 //
 // console.log(alphabetPosition("p@-k_}.5"));
 
+// 23. Find unique number. There is an array with some numbers. All numbers are equal except for one. Try to find it.
 
+function findUniq(arr) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] !== arr[i+1]) {
+            return arr[i+1];
+        }
+    }
+}
+
+console.log(findUniq([1,4,1,1,1,1,1]));
 
 
 
