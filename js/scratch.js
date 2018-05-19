@@ -459,5 +459,18 @@
 // 25. Your task is to sort a given string. Each word in the String will contain a single number.
 // This number is the position the word should have in the result.
 
+function order(words) {
+    var arr = words.split(" ");
+    var result = [];
+    arr.forEach(function (x) {
+        for (var i = 0; i < x.length; i++) {
+            if (/\d/.test(x[i])) {
+                result[x[i]-1] = x;
+            }
+        }
+    });
+    return result.join(" ")
+}
 
+console.log(order("is2 Thi1s T4est 3a"));
 
