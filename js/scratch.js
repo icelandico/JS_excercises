@@ -423,17 +423,41 @@
 
 // 23. Find unique number. There is an array with some numbers. All numbers are equal except for one. Try to find it.
 
-function findUniq(arr) {
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i] !== arr[i+1]) {
-            return arr[i+1];
-        }
-    }
-}
+// function findUniq(arr) {
+//     for (var i = 0; i < arr.length; i++) {
+//         if (arr[i+1] !== arr[i]) {
+//             return arr[i+1];
+//         }
+//     }
+// }
 
-console.log(findUniq([1,4,1,1,1,1,1]));
+// console.log(findUniq([3,1,1,1,1,1,1])); // Not completed, doesn't work when unique val is at position "0";
 
+// 24. Given: an array containing hashes of names Return: a string formatted as a list of names separated by commas
+//     except for the last two names, which should be separated by an ampersand.
 
+// function list(names){
+//     var arr = names.map(x => x.name);
+//     if (arr.length > 1) {
+//         return arr.slice(0,arr.length-1).join(", ") + " & " + arr[arr.length-1]
+//     } else if (arr.length === 1) {
+//         return names[0].name;
+//     } else {
+//         return '';
+//     }
+// }
+//
+// var lista = [{name: 'Bart'},
+//             {name: 'Lisa'},
+//             {name: 'Maggie'},
+//             {name: 'Homer'},
+//             {name: 'Marge'}
+//          ];
+//
+// console.log(list(lista));
+
+// 25. Your task is to sort a given string. Each word in the String will contain a single number.
+// This number is the position the word should have in the result.
 
 
 
