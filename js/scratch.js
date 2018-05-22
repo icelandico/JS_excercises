@@ -163,25 +163,25 @@
 //     Second argument (optional): space-delimited list of minor words that must always be lowercase except for the first
 //     word in the string. The JavaScript/CoffeeScript tests will pass undefined when this argument is unused
 
-// function titleCase(title, minorWords) {
-//     var b = minorWords.split(" ").map(x => x.toUpperCase());
-//     var a = title.split(" ").map(x => x.toUpperCase());
-//
-//     // var c = (title.split(" ").map(x => x[0][0].toUpperCase() + x.substr(1).toLowerCase()).join(' '));
-//     // var a = (title.split(" ").map(x => x.substr(1).toLowerCase()).join(' '));
-//     console.log(a, b);
-//     for(i = 0; i < a.length; i++) {
-//         for(y = 1; y < b.length; y++){
-//             if(a[i] === b[y]) {
-//                 a[i] =  a[i].toLowerCase();
-//             }
-//         }
-//     }
-//
-//     console.log(a.join(' '));
-// }
-//
-// titleCase('a clash of KINGS', 'a an the of');
+function titleCase(title, minorWords) {
+    var b = minorWords.split(" ").map(x => x.toUpperCase());
+    var a = title.split(" ").map(x => x.toUpperCase());
+
+    // var c = (title.split(" ").map(x => x[0][0].toUpperCase() + x.substr(1).toLowerCase()).join(' '));
+    // var a = (title.split(" ").map(x => x.substr(1).toLowerCase()).join(' '));
+    console.log(a, b);
+    for(i = 0; i < a.length; i++) {
+        for(y = 1; y < b.length; y++){
+            if(a[i] === b[y]) {
+                a[i] =  a[i].toLowerCase();
+            }
+        }
+    }
+
+    console.log(a.join(' '));
+}
+
+titleCase('a clash of KINGS', 'a an the of');
 
 // 13. How many times to fold a piece of paper to reach a given distance in meters? Paper has a thickness of 0.0001 m.
 
@@ -431,7 +431,9 @@
 //     }
 // }
 
-// console.log(findUniq([3,1,1,1,1,1,1])); // Not completed, doesn't work when unique val is at position "0";
+// console.log(findUniq([4,3,3,3]));
+
+ // Not completed, doesn't work when unique val is at position "0";
 
 // 24. Given: an array containing hashes of names Return: a string formatted as a list of names separated by commas
 //     except for the last two names, which should be separated by an ampersand.
@@ -459,18 +461,19 @@
 // 25. Your task is to sort a given string. Each word in the String will contain a single number.
 // This number is the position the word should have in the result.
 
-function order(words) {
-    var arr = words.split(" ");
-    var result = [];
-    arr.forEach(function (x) {
-        for (var i = 0; i < x.length; i++) {
-            if (/\d/.test(x[i])) {
-                result[x[i]-1] = x;
-            }
-        }
-    });
-    return result.join(" ")
-}
+// function order(words) {
+//     var arr = words.split(" ");
+//     var result = [];
+//     arr.forEach(function (x) {
+//         for (var i = 0; i < x.length; i++) {
+//             if (/\d/.test(x[i])) {
+//                 result[x[i]-1] = x;
+//             }
+//         }
+//     });
+//     return result.join(" ")
+// }
+//
+// console.log(order("is2 Thi1s T4est 3a"));
 
-console.log(order("is2 Thi1s T4est 3a"));
-
+// 26. Calculator. Each function represents calculator element. Make it working like calculator;
