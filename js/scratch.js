@@ -164,12 +164,12 @@
 //     word in the string. The JavaScript/CoffeeScript tests will pass undefined when this argument is unused
 
 function titleCase(title, minorWords) {
-    var b = minorWords.split(" ").map(x => x.toUpperCase());
-    var a = title.split(" ").map(x => x.toUpperCase());
+    // var b = minorWords.split(" ").map(x => x.toUpperCase());
+    // var a = title.split(" ").map(x => x.toUpperCase());
+    let abc = minorWords.split(' ');
+    var b = abc.map(x => x.toUpperCase());
+    var a = title.split(' ').map(x => x.toUpperCase());
 
-    // var c = (title.split(" ").map(x => x[0][0].toUpperCase() + x.substr(1).toLowerCase()).join(' '));
-    // var a = (title.split(" ").map(x => x.substr(1).toLowerCase()).join(' '));
-    console.log(a, b);
     for(i = 0; i < a.length; i++) {
         for(y = 1; y < b.length; y++){
             if(a[i] === b[y]) {
@@ -177,11 +177,10 @@ function titleCase(title, minorWords) {
             }
         }
     }
-
-    console.log(a.join(' '));
+    return (a.join(' '));
 }
 
-titleCase('a clash of KINGS', 'a an the of');
+console.log(titleCase('a clash of KINGS', 'a an the of'));
 
 // 13. How many times to fold a piece of paper to reach a given distance in meters? Paper has a thickness of 0.0001 m.
 
