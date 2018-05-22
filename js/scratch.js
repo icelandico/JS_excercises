@@ -161,26 +161,27 @@
 
 // 12. First argument (required): the original string to be converted.
 //     Second argument (optional): space-delimited list of minor words that must always be lowercase except for the first
-//     word in the string. The JavaScript/CoffeeScript tests will pass undefined when this argument is unused
+//     word in the string.
 
 function titleCase(title, minorWords) {
-    // var b = minorWords.split(" ").map(x => x.toUpperCase());
-    // var a = title.split(" ").map(x => x.toUpperCase());
-    let abc = minorWords.split(' ');
+    let abc = String(minorWords).split(' ');
     var b = abc.map(x => x.toUpperCase());
     var a = title.split(' ').map(x => x.toUpperCase());
-
-    for(i = 0; i < a.length; i++) {
-        for(y = 1; y < b.length; y++){
-            if(a[i] === b[y]) {
-                a[i] =  a[i].toLowerCase();
+    for (let i = 0; i < a.length; i++) {
+        if (i === 0) {
+           a[0] = String(a[0][0]).toUpperCase() + a[0].substring(1).toLowerCase()
+        } else {
+            if (b.indexOf(a[i]) > -1) {
+                a[i] = a[i].toLowerCase();
+            } else {
+                a[i] = String(a[i][0].toUpperCase() + a[i].substring(1).toLowerCase())
             }
         }
     }
-    return (a.join(' '));
+    return a.join(" ")
 }
 
-console.log(titleCase('a clash of KINGS', 'a an the of'));
+console.log(titleCase(''));
 
 // 13. How many times to fold a piece of paper to reach a given distance in meters? Paper has a thickness of 0.0001 m.
 
@@ -429,7 +430,7 @@ console.log(titleCase('a clash of KINGS', 'a an the of'));
 //         }
 //     }
 // }
-
+//
 // console.log(findUniq([4,3,3,3]));
 
  // Not completed, doesn't work when unique val is at position "0";
@@ -474,5 +475,3 @@ console.log(titleCase('a clash of KINGS', 'a an the of'));
 // }
 //
 // console.log(order("is2 Thi1s T4est 3a"));
-
-// 26. Calculator. Each function represents calculator element. Make it working like calculator;
