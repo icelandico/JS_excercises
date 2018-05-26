@@ -2,7 +2,7 @@
 
 // function confirmEnding(str, target) {
 //     var last = str.substr(-(target.length));
-//     console.log(last);
+//     return (last);
 //
 //     if (target.toLowerCase() == last.toLowerCase()) {
 //         return true;
@@ -28,7 +28,7 @@
 //         str2 += str;
 //         i--;
 //     }
-//     console.log(str2);
+//     return (str2);
 // }
 //
 // repeatStringNumTimes("SuDo", 7);
@@ -37,13 +37,14 @@
 // 3. Calculates Years to get desired sum of money
 
 // function calculateYears(principal, interest, tax, desired) {
-//     var Y = 0;
+//     var y = 0;
 //     if (principal != desired) {
 //         while (principal <= desired) {
 //             principal += ((interest * principal) - (tax * interest * principal));
-//             Y++;
+//             y++;
 //         }
-//     } console.log(Y);
+//     }
+//      return y;
 // }
 //
 // calculateYears(1000, 0.05, 0.18, 1000);
@@ -52,12 +53,12 @@
 
 // function truncateString(str, num) {
 //     if (str.length > num) {
-//         console.log(str.slice(0,num-3)) + "...";
+//         return (str.slice(0,num-3)) + "...";
 //     } else if (num<=3) {
-//         console.log(str.slice(0, num)) + "...";
+//         return (str.slice(0, num)) + "...";
 //
 //     } else {
-//         console.log(str);
+//         return (str);
 //     }
 // }
 //
@@ -70,7 +71,7 @@
 //     for (i=0; i < arr.length; i+=size) {
 //         arr2.push(arr.slice(i, i+size));
 //     }
-//     console.log(arr2);
+//     return (arr2);
 // }
 //
 // chunkArrayInGroups(["a", "b", "c", "d", "e"], 4);
@@ -163,25 +164,25 @@
 //     Second argument (optional): space-delimited list of minor words that must always be lowercase except for the first
 //     word in the string.
 
-function titleCase(title, minorWords) {
-    let abc = String(minorWords).split(' ');
-    var b = abc.map(x => x.toUpperCase());
-    var a = title.split(' ').map(x => x.toUpperCase());
-    for (let i = 0; i < a.length; i++) {
-        if (i === 0) {
-           a[0] = String(a[0][0]).toUpperCase() + a[0].substring(1).toLowerCase()
-        } else {
-            if (b.indexOf(a[i]) > -1) {
-                a[i] = a[i].toLowerCase();
-            } else {
-                a[i] = String(a[i][0].toUpperCase() + a[i].substring(1).toLowerCase())
-            }
-        }
-    }
-    return a.join(" ")
-}
-
-console.log(titleCase(''));
+// function titleCase(title, minorWords) {
+//     let abc = String(minorWords).split(' ');
+//     var b = abc.map(x => x.toUpperCase());
+//     var a = title.split(' ').map(x => x.toUpperCase());
+//     for (let i = 0; i < a.length; i++) {
+//         if (i === 0) {
+//            a[0] = String(a[0][0]).toUpperCase() + a[0].substring(1).toLowerCase()
+//         } else {
+//             if (b.indexOf(a[i]) > -1) {
+//                 a[i] = a[i].toLowerCase();
+//             } else {
+//                 a[i] = String(a[i][0].toUpperCase() + a[i].substring(1).toLowerCase())
+//             }
+//         }
+//     }
+//     return a.join(" ")
+// }
+//
+// console.log(titleCase(''));
 
 // 13. How many times to fold a piece of paper to reach a given distance in meters? Paper has a thickness of 0.0001 m.
 
@@ -475,3 +476,18 @@ console.log(titleCase(''));
 // }
 //
 // console.log(order("is2 Thi1s T4est 3a"));
+
+// 26. Return final grade
+
+// function finalGrade (exam, projects) {
+//     if (exam > 90 || projects > 10) {
+//         return 100;
+//     } else if (exam > 75 && projects >= 5) {
+//         return 90;
+//     } else if (exam > 50 && projects >= 2) {
+//         return 50;
+//     } else {
+//         return 0;
+//     }
+// }
+
