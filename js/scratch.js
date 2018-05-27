@@ -491,3 +491,10 @@
 //     }
 // }
 
+// 27. Return given string in alphabetical order
+
+function alphabetSoup(str) {
+    return str.split("").sort().join("")
+}
+
+alphabetSoup("this string needs to be sorted");
