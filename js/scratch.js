@@ -510,3 +510,24 @@ function getAbsSum(arr) {
 }
 
 getAbsSum([-1,-2,-3,4,5,-7]);
+
+// Shorthand
+
+function getAbsSum(arr){
+    return arr.reduce((count, num) => count + Math.abs(num), 0)
+}
+
+// 29. Count vowels (no RegExp)
+
+function countVowels(str) {
+    let counter = 0;
+    var vowels = ['a', 'e', 'i', 'o', 'u']
+    for (var i = 0; i < str.length; i++) {
+        for (var j = 0; j < vowels.length; j++) {
+            if (str[i] === vowels[j]) {
+                counter += 1;
+            }
+        }
+    }
+    return counter;
+}
