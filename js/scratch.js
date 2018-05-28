@@ -531,3 +531,11 @@ function countVowels(str) {
     }
     return counter;
 }
+
+// With RegExp
+
+function countVowels(str) {
+    return str.match(/[aeiou]/g).length;
+}
+
+// 30.
