@@ -551,9 +551,7 @@
 
 function findLargestNums(arr) {
     var result = [];
-    arr.forEach(function(x) {
-        result.push(Math.max.apply(null,x))
-    })
+    arr.forEach(x => result.push(Math.max.apply(null, x)));
     return result;
 }
 
