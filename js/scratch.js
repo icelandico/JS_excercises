@@ -544,7 +544,7 @@
 //     return arr.map(x => x[0].toUpperCase() + x.slice(1).toLowerCase())
 // }
 //
-// console.log(capMe(["samuel", "MABELLE", "letitia", "meridith"]));
+// capMe(["samuel", "MABELLE", "letitia", "meridith"]);
 
 // 31. Find the largest number in set of arrays
 //
@@ -556,3 +556,11 @@
 //
 // findLargestNums([[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]]);
 
+// 32. Phone number formatting
+
+// function formatPhoneNumber(numbers) {
+//     var numbersStr = numbers.join("")
+//     return "(" + numbersStr.slice(0,3) + ")" + " " + numbersStr.slice(3,6) + "-" + numbersStr.slice(6)
+// }
+//
+// formatPhoneNumber([3, 4, 5, 5, 0, 1, 2, 5, 2, 7]);
