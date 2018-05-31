@@ -538,21 +538,21 @@
 //     return str.match(/[aeiou]/g).length;
 // }
 //
-// // 30. Capitalize first letter
+// 30. Capitalize first letter only
 
 // function capMe(arr) {
-//     var arrLower = arr.forEach(x => x.toLowerCase());
-//     return arrLower;
+//     return arr.map(x => x[0].toUpperCase() + x.slice(1).toLowerCase())
 // }
 //
 // console.log(capMe(["samuel", "MABELLE", "letitia", "meridith"]));
 
 // 31. Find the largest number in set of arrays
+//
+// function findLargestNums(arr) {
+//     var result = [];
+//     arr.forEach(x => result.push(Math.max.apply(null, x)));
+//     return result;
+// }
+//
+// findLargestNums([[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]]);
 
-function findLargestNums(arr) {
-    var result = [];
-    arr.forEach(x => result.push(Math.max.apply(null, x)));
-    return result;
-}
-
-console.log(findLargestNums([[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]]));
