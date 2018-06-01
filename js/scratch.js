@@ -564,3 +564,18 @@
 // }
 //
 // formatPhoneNumber([3, 4, 5, 5, 0, 1, 2, 5, 2, 7]);
+
+// 33. Function that takes three input values (a, b, c) and returns the number of equal values.
+
+function equal(a, b, c) {
+    var equalSet = new Set([a,b,c]);
+    if (equalSet.size === 1) {
+        return 3
+    } else if (equalSet.size === 2) {
+        return 2
+    } else {
+        return 0
+    }
+}
+
+equal(1,2,3);
