@@ -73,3 +73,26 @@ function removeDups(arr) {
 }
 
 removeDups(["John", "Taylor", "John", "John"]);
+
+// 7. Pi to N Decimal Places
+
+function myPi(n) {
+    return parseFloat((Math.PI).toFixed(n))
+}
+
+myPi(3);
+
+// 8. Remove Every Vowel from a String
+
+function silenceTrump(str) {
+    var result = str.split("");
+    for (x in result) {
+        if (result[x].match(/[aeiouAEIOU]/g)) {
+            result[x] = ""
+        }
+    }
+    return result.join("");
+}
+
+console.log(silenceTrump("Sorry losers and haters, but my I.Q. is one of the highest -and you all know it! Please " +
+                         "don’t feel so stupid or insecure,it’s not your fault"));
