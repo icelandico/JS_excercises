@@ -47,3 +47,15 @@ function minMaxLengthAverage(arr) {
 
 
 minMaxLengthAverage([30, 43, 20, 92, 3, 74]);
+
+// 5. Find the missing number in array
+
+function missingNums(arr) {
+    for (var i = 1;  i <= 10; i++) {
+        if (arr.indexOf(i) === -1) {
+            return i
+        }
+    }
+}
+
+console.log(missingNums([7, 2, 3, 6, 5, 9, 1, 4, 8]));
