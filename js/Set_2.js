@@ -103,4 +103,19 @@ function sortDecending(num) {
     return parseInt(num.toString().split("").sort((a,b) => b-a).join(""));
 }
 
-console.log(sortDecending(73065));
+sortDecending(73065);
+
+// 10. Write a function that takes four string arguments. You will be comparing the first string to the three
+//     next strings. Verify if the first string starts with the second string, includes the third string, and ends
+//     with the fourth string.
+
+function verifySubstrs(mainStr, head, body, tail) {
+    if (mainStr.startsWith(head) && mainStr.includes(body) && mainStr.endsWith(tail)) {
+        return "My head, body, and tail."
+    } else {
+        return "Incomplete"
+    }
+}
+
+verifySubstrs("Centipede", "Cent", "tip", "pede");
+
