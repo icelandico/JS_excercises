@@ -126,3 +126,18 @@ function mean(arr) {
 }
 
 mean([1,2,3]);
+
+// 12. Count Ones in Binary Representation of Integer
+
+function countOnes(i) {
+    i = i.toString(2);
+    var counter = 0;
+    for (x in i) {
+        if (i[x] === '1') {
+            counter += 1;
+        }
+    }
+    return counter;
+}
+
+countOnes(3);
