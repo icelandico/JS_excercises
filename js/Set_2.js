@@ -94,5 +94,13 @@ function silenceTrump(str) {
     return result.join("");
 }
 
-console.log(silenceTrump("Sorry losers and haters, but my I.Q. is one of the highest -and you all know it! Please " +
-                         "don’t feel so stupid or insecure,it’s not your fault"));
+silenceTrump("Sorry losers and haters, but my I.Q. is one of the highest -and you all know it! Please " +
+             "don’t feel so stupid or insecure,it’s not your fault");
+
+// 9. Sort Numbers in Descending Order
+
+function sortDecending(num) {
+    return parseInt(num.toString().split("").sort((a,b) => b-a).join(""));
+}
+
+console.log(sortDecending(73065));
