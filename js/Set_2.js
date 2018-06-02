@@ -30,3 +30,20 @@ function factorial(int) {
 
 factorial(3);
 
+// 4. Create a function that takes an array of numbers and returns the following statistics:
+    // Minimum Value
+    // Maximum Value
+    // Sequence Length
+    // Average Value
+
+function minMaxLengthAverage(arr) {
+    var result = [];
+    result.push(Math.min(...arr));
+    result.push(Math.max(...arr));
+    result.push(arr.length);
+    result.push(arr.reduce((a,b) => a+b) / arr.length);
+    return result;
+}
+
+
+minMaxLengthAverage([30, 43, 20, 92, 3, 74]);
