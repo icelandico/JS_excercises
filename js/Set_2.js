@@ -119,3 +119,10 @@ function verifySubstrs(mainStr, head, body, tail) {
 
 verifySubstrs("Centipede", "Cent", "tip", "pede");
 
+// 11. Calculate the mean of array elements
+
+function mean(arr) {
+    return parseFloat((arr.reduce((a,b) => a+b) / arr.length).toFixed(2))
+}
+
+mean([1,2,3]);
