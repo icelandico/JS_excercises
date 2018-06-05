@@ -141,3 +141,91 @@ function countOnes(i) {
 }
 
 countOnes(3);
+
+// 13. Modify the object collection (JSON)
+
+// var collection = {
+//     "2548": {
+//         "album": "Slippery When Wet",
+//         "artist": "Bon Jovi",
+//         "tracks": [
+//             "Let It Rock",
+//             "You Give Love a Bad Name"
+//         ]
+//     },
+//     "2468": {
+//         "album": "1999",
+//         "artist": "Prince",
+//         "tracks": [
+//             "1999",
+//             "Little Red Corvette"
+//         ]
+//     },
+//     "1245": {
+//         "artist": "Robert Palmer",
+//         "tracks": [ ]
+//     },
+//     "5439": {
+//         "album": "ABBA Gold"
+//     }
+// };
+//
+// function updateRecords(id, prop, value) {
+//     if (value === "") {
+//         delete collection[id][prop];
+//     } else {
+//         if (!collection[id].hasOwnProperty(prop)) {
+//             if (prop === "tracks") {
+//                 collection[id][prop] = [];
+//                 collection[id][prop].push(value);
+//             } else {
+//                 collection[id][prop] = value;
+//             }
+//         } else {
+//             if (prop === "tracks") {
+//                 collection[id]["tracks"].push(value);
+//                 console.log("HEEE")
+//             } else {
+//                 collection[id][prop] = value;
+//             }
+//         }
+//     }
+//     return collection
+// }
+//
+// updateRecords(5439, "album", "New album Title");
+
+// 14. Given an array, find the int that appears an odd number of times.
+
+// function findOdd(A) {
+//     //happy coding!
+//     return 0;
+// }
+
+// 15. Basic email validation
+
+// function validateEmail(str) {
+//     let chars = new RegExp(/@./);
+//     if (chars.test(str)) {
+//         if (str[str.indexOf('@') - 1] !== undefined && (str.slice(str.indexOf('@'))).indexOf('.') > -1) {
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     } else {
+//         return false;
+//     }
+// }
+//
+// validateEmail("@edabit.com");
+
+// 16. Str is a string give. "sp" is a separator. For example:
+//     splitAndMerge("My name is John"," ") , "M y n a m e i s J o h n";
+
+function splitAndMerge(str,sp){
+    str = (str.split(" ")).map(x => x.split(""));
+    return (str.map(x => x.join(sp))).join(" ");
+}
+
+console.log(splitAndMerge("My name is John","."));
+
