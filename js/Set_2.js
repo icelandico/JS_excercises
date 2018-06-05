@@ -231,16 +231,37 @@ countOnes(3);
 
 // 17. Find maximal divisor. Result is: divisible by divisor, less than or equal to bound and is greater than 0.
 
-function maxMultiple(divisor, bound){
-    i = 0;
-    result = 0;
-    while (i <= bound) {
-        if (i % divisor === 0) {
-            result = i;
-        }
-        i++
-    }
-    return result
-}
+// function maxMultiple(divisor, bound){
+//     i = 0;
+//     result = 0;
+//     while (i <= bound) {
+//         if (i % divisor === 0) {
+//             result = i;
+//         }
+//         i++
+//     }
+//     return result
+// }
+//
+// maxMultiple(10,50);
 
-maxMultiple(10,50);
+// 18. Several people are standing in a row divided into two teams.
+// The first person goes into team 1, the second goes into team 2, the third goes into team 1, and so on.Given an array
+// of positive integers (the weights of the people), return a new array/tuple of two integers, where the first one is
+// the total weight of team 1, and the second one is the total weight of team 2.
+
+// function rowWeights(array){
+//     let result = [0,0];
+//     for (let i = 0; i < array.length; i++) {
+//         if(i % 2 === 0) {
+//             result[0] += (array[i])
+//         } else {
+//             result[1] += (array[i])
+//         }
+//     }
+//     return result;
+// }
+//
+// rowWeights([100, 50, 100, 50]);
+
+
