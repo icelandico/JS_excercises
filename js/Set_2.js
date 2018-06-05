@@ -222,10 +222,25 @@ countOnes(3);
 // 16. Str is a string give. "sp" is a separator. For example:
 //     splitAndMerge("My name is John"," ") , "M y n a m e i s J o h n";
 
-function splitAndMerge(str,sp){
-    str = (str.split(" ")).map(x => x.split(""));
-    return (str.map(x => x.join(sp))).join(" ");
+// function splitAndMerge(str,sp){
+// //     str = (str.split(" ")).map(x => x.split(""));
+// //     return (str.map(x => x.join(sp))).join(" ");
+// // }
+// //
+// // console.log(splitAndMerge("My name is John","."));
+
+// 17. Find maximal divisor. Result is: divisible by divisor, less than or equal to bound and is greater than 0.
+
+function maxMultiple(divisor, bound){
+    i = 0;
+    result = 0;
+    while (i <= bound) {
+        if (i % divisor === 0) {
+            result = i;
+        }
+        i++
+    }
+    return result
 }
 
-console.log(splitAndMerge("My name is John","."));
-
+maxMultiple(10,50);
