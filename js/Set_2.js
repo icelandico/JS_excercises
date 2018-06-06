@@ -144,56 +144,56 @@ countOnes(3);
 
 // 13. Modify the object collection (JSON)
 
-// var collection = {
-//     "2548": {
-//         "album": "Slippery When Wet",
-//         "artist": "Bon Jovi",
-//         "tracks": [
-//             "Let It Rock",
-//             "You Give Love a Bad Name"
-//         ]
-//     },
-//     "2468": {
-//         "album": "1999",
-//         "artist": "Prince",
-//         "tracks": [
-//             "1999",
-//             "Little Red Corvette"
-//         ]
-//     },
-//     "1245": {
-//         "artist": "Robert Palmer",
-//         "tracks": [ ]
-//     },
-//     "5439": {
-//         "album": "ABBA Gold"
-//     }
-// };
-//
-// function updateRecords(id, prop, value) {
-//     if (value === "") {
-//         delete collection[id][prop];
-//     } else {
-//         if (!collection[id].hasOwnProperty(prop)) {
-//             if (prop === "tracks") {
-//                 collection[id][prop] = [];
-//                 collection[id][prop].push(value);
-//             } else {
-//                 collection[id][prop] = value;
-//             }
-//         } else {
-//             if (prop === "tracks") {
-//                 collection[id]["tracks"].push(value);
-//                 console.log("HEEE")
-//             } else {
-//                 collection[id][prop] = value;
-//             }
-//         }
-//     }
-//     return collection
-// }
-//
-// updateRecords(5439, "album", "New album Title");
+var collection = {
+    "2548": {
+        "album": "Slippery When Wet",
+        "artist": "Bon Jovi",
+        "tracks": [
+            "Let It Rock",
+            "You Give Love a Bad Name"
+        ]
+    },
+    "2468": {
+        "album": "1999",
+        "artist": "Prince",
+        "tracks": [
+            "1999",
+            "Little Red Corvette"
+        ]
+    },
+    "1245": {
+        "artist": "Robert Palmer",
+        "tracks": [ ]
+    },
+    "5439": {
+        "album": "ABBA Gold"
+    }
+};
+
+function updateRecords(id, prop, value) {
+    if (value === "") {
+        delete collection[id][prop];
+    } else {
+        if (!collection[id].hasOwnProperty(prop)) {
+            if (prop === "tracks") {
+                collection[id][prop] = [];
+                collection[id][prop].push(value);
+            } else {
+                collection[id][prop] = value;
+            }
+        } else {
+            if (prop === "tracks") {
+                collection[id]["tracks"].push(value);
+                console.log("HEEE")
+            } else {
+                collection[id][prop] = value;
+            }
+        }
+    }
+    return collection
+}
+
+updateRecords(5439, "album", "New album Title");
 
 // 14. Given an array, find the int that appears an odd number of times.
 
@@ -204,71 +204,93 @@ countOnes(3);
 
 // 15. Basic email validation
 
-// function validateEmail(str) {
-//     let chars = new RegExp(/@./);
-//     if (chars.test(str)) {
-//         if (str[str.indexOf('@') - 1] !== undefined && (str.slice(str.indexOf('@'))).indexOf('.') > -1) {
-//             return true;
-//         } else {
-//             return false;
-//         }
-//     } else {
-//         return false;
-//     }
-// }
-//
-// validateEmail("@edabit.com");
+function validateEmail(str) {
+    let chars = new RegExp(/@./);
+    if (chars.test(str)) {
+        if (str[str.indexOf('@') - 1] !== undefined && (str.slice(str.indexOf('@'))).indexOf('.') > -1) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
+
+validateEmail("@edabit.com");
 
 // 16. Str is a string give. "sp" is a separator. For example:
 //     splitAndMerge("My name is John"," ") , "M y n a m e i s J o h n";
 
-// function splitAndMerge(str,sp){
-// //     str = (str.split(" ")).map(x => x.split(""));
-// //     return (str.map(x => x.join(sp))).join(" ");
-// // }
-// //
-// // console.log(splitAndMerge("My name is John","."));
+function splitAndMerge(str,sp) {
+    str = (str.split(" ")).map(x => x.split(""));
+    return (str.map(x => x.join(sp))).join(" ");
+}
+
+splitAndMerge("My name is John",".");
 
 // 17. Find maximal divisor. Result is: divisible by divisor, less than or equal to bound and is greater than 0.
 
-// function maxMultiple(divisor, bound){
-//     i = 0;
-//     result = 0;
-//     while (i <= bound) {
-//         if (i % divisor === 0) {
-//             result = i;
-//         }
-//         i++
-//     }
-//     return result
-// }
-//
-// maxMultiple(10,50);
+    function maxMultiple(divisor, bound) {
+        i = 0;
+        result = 0;
+        while (i <= bound) {
+            if (i % divisor === 0) {
+                result = i;
+            }
+            i++
+        }
+        return result
+    }
+
+    maxMultiple(10, 50);
 
 // 18. Several people are standing in a row divided into two teams.
 // The first person goes into team 1, the second goes into team 2, the third goes into team 1, and so on.Given an array
 // of positive integers (the weights of the people), return a new array/tuple of two integers, where the first one is
 // the total weight of team 1, and the second one is the total weight of team 2.
 
-// function rowWeights(array){
-//     let result = [0,0];
-//     for (let i = 0; i < array.length; i++) {
-//         if(i % 2 === 0) {
-//             result[0] += (array[i])
-//         } else {
-//             result[1] += (array[i])
-//         }
-//     }
-//     return result;
-// }
-//
-// rowWeights([100, 50, 100, 50]);
+    function rowWeights(array) {
+        let result = [0, 0];
+        for (let i = 0; i < array.length; i++) {
+            if (i % 2 === 0) {
+                result[0] += (array[i])
+            } else {
+                result[1] += (array[i])
+            }
+        }
+        return result;
+    }
+
+    rowWeights([100, 50, 100, 50]);
 
 
 // 19. Given a year, return the century it is in.
 
-function century(year) {
-    return Math.ceil(year / 100)
-}
+    function century(year) {
+        return Math.ceil(year / 100)
+    }
 
-century(2001);
+    century(2001);
+
+// 20. Remove whitespaces
+
+    function noSpace(x) {
+        x = x.split("");
+        return x.filter(x => x !== " ").join("")
+    }
+
+    noSpace('8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd');
+
+// 21. Using ...args make function working to sum up all elements
+//
+const sum = (function(x,y,z,...args) {
+    const argsTwo = [ x, y, z ];
+    return function sum(...args) {
+
+        return args.reduce((a, b) => a + b, 0);
+    };
+})();
+
+sum(1,2,3,4,5); // 6
+
