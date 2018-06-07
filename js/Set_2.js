@@ -294,3 +294,44 @@ const sum = (function(x,y,z,...args) {
 
 sum(1,2,3,4,5); // 6
 
+// 22. Change string so the lowercase becomes uppercase and reverse
+
+ function alternateCase () {
+    let result = "";
+    for (letter in String) {
+        if (String[letter] === String[letter].toLowerCase()) {
+            result += String[letter].toUpperCase()
+        } else {
+            result += String[letter].toLowerCase()
+        }
+    }
+    return result
+};
+
+alternateCase("cHangE CASe OF thiS strING");
+
+// 23. Create a function that takes an array of positive and negative numbers.
+// Return an array where the first element is the count of positive numbers and the second element is the
+// sum of negative numbers.
+
+function countPosSumNeg(arr) {
+    if (arr === null || arr.length === 0) {
+        return [];
+    } else {
+        let result = [0,0];
+        for (i = 0; i < arr.length; i++) {
+            if (Math.sign(arr[i]) === 1) {
+                result[0] += 1;
+            } else {
+                result [1] += arr[i]
+            }
+
+        }
+        return result;
+    }
+
+}
+
+console.log(countPosSumNeg([]));
+
+
