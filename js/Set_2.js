@@ -367,5 +367,17 @@ function XO(str) {
 
 XO('oxXm');
 
+// 26. Remove special characters from string
 
+function removeSpecialCharacters(str) {
+    let result = "";
+    let specialChar = new RegExp(/[\w-_\s]/);
+    for (item in str) {
+        if (specialChar.test(str[item])) {
+            result += str[item]
+        }
+    }
+    return result;
+}
 
+removeSpecialCharacters("Etiam#!!!!!,,, [`po%rta ~sem!] {male*su-ada} (ma*gna) mo^llis... eui$smod???"));
