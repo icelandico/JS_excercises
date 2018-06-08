@@ -296,16 +296,16 @@ sum(1,2,3,4,5); // 6
 
 // 22. Change string so the lowercase becomes uppercase and reverse
 
- function alternateCase () {
-    let result = "";
-    for (letter in String) {
-        if (String[letter] === String[letter].toLowerCase()) {
-            result += String[letter].toUpperCase()
-        } else {
-            result += String[letter].toLowerCase()
-        }
-    }
-    return result
+ function alternateCase(str) {
+     let result = "";
+     for (letter in str) {
+         if (str[letter] === str[letter].toLowerCase()) {
+             result += str[letter].toUpperCase()
+         } else {
+             result += str[letter].toLowerCase()
+         }
+     }
+     return result
 };
 
 alternateCase("cHangE CASe OF thiS strING");
@@ -325,13 +325,47 @@ function countPosSumNeg(arr) {
             } else {
                 result [1] += arr[i]
             }
-
         }
         return result;
     }
-
 }
 
-console.log(countPosSumNeg([]));
+countPosSumNeg([-4,5,6,-90,1,-1,-56,45]);
+
+// 24. Find needle in haystack
+
+function findNeedle(haystack) {
+    for (let i = 0; i < haystack.length; i++) {
+        if (haystack[i] === 'needle') {
+            return 'found needle at position ' + i;
+        }
+    }
+}
+
+// Shorthand
+
+function findNeedle(haystack) {
+    return "found needle at position " + haystack.indexOf("needle")
+}
+
+findNeedle(['3', '123124234', undefined, 'needle', 'world', 'hay', 2, '3', true, false]);
+
+
+// 25. Create a function that takes a string, checks if it has the same number of 'x's and 'o's and returns
+// either true or false.
+
+function XO(str) {
+    str = str.toLowerCase();
+    let numX = 0;
+    let numO = 0;
+    for (let i = 0; i < str. length; i++) {
+        if (str[i] === 'x') numX += 1;
+        else if (str[i] === 'o') numO += 1;
+    }
+    return (numX === numO ? true : false);
+}
+
+XO('oxXm');
+
 
 
