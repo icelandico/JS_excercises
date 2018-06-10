@@ -380,4 +380,20 @@ function removeSpecialCharacters(str) {
     return result;
 }
 
-removeSpecialCharacters("Etiam#!!!!!,,, [`po%rta ~sem!] {male*su-ada} (ma*gna) mo^llis... eui$smod???"));
+removeSpecialCharacters("Etiam#!!!!!,,, [`po%rta ~sem!] {male*su-ada} (ma*gna) mo^llis... eui$smod???");
+
+// 27. Sort elements in object based on values >= 60 annd sort them descending.
+function myLanguages(results) {
+    let elements = [];
+    for (item in results) {
+        elements.push([item, results[item]])
+    }
+    let result = elements.filter(x => x[1] >= 60)
+                 .sort((a,b) => b[1] - a[1]);
+
+    let resulted = result.map(x => x[0]);
+    return myRes
+
+}
+
+myLanguages({"Java" : 61, "Ruby" : 80, "Python" : 95, "Haskell": 40, "Polish": 100, "SQL": 50});
