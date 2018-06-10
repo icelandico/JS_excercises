@@ -382,7 +382,7 @@ function removeSpecialCharacters(str) {
 
 removeSpecialCharacters("Etiam#!!!!!,,, [`po%rta ~sem!] {male*su-ada} (ma*gna) mo^llis... eui$smod???");
 
-// 27. Sort elements in object based on values >= 60 annd sort them descending.
+// 27. Sort elements in object based on values >= 60 and sort them descending.
 function myLanguages(results) {
     let elements = [];
     for (item in results) {
@@ -394,6 +394,10 @@ function myLanguages(results) {
     let resulted = result.map(x => x[0]);
     return myRes
 
+}
+
+function myLanguages2(results2) {
+    return Object.keys(results2).filter(x => results[x] >= 60).sort((a, b) => results2[b] - results2[a])
 }
 
 myLanguages({"Java" : 61, "Ruby" : 80, "Python" : 95, "Haskell": 40, "Polish": 100, "SQL": 50});
