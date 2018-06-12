@@ -421,7 +421,7 @@ highLow("4 5 29 54 4 0 -214 542 -64 1 -3 6 -6");
 function matrix(x, y, z) {
     let res = [];
     for (let i = 0; i < x; i++) {
-        res.push([])
+        res.push([]);
         for (let j = 0; j < y; j++) {
             res[i].push(z)
         }
@@ -440,15 +440,41 @@ matrix(2, 1, "edabit");
 // 30. Reverse the Order of Words with Five Letters or More
 
 function reverse(str) {
-    let arra = str.split(" ")
+    let arra = str.split(" ");
     let res = arra.map(function(x) {
         if (x.length >= 5) {
             return x.split("").reverse().join("")
         } else {
             return x;
         }
-    })
+    });
     return res.join(" ");
 }
 
-console.log(reverse("Reverse the order of every word greater than or equal to five characters."));
+reverse("Reverse the order of every word greater than or equal to five characters.");
+
+// 31. Create a function that takes a string as an argument and returns a coded (h4ck3r 5p34k) version of the string.
+
+// No RegExp
+
+function hackerSpeak(str) {
+    let arra = str.split("");
+    let res = arra.map(function(x) {
+        if (x === 'a') {
+            return '4'
+        } else if (x === 'e') {
+            return '3'
+        } else if (x === 'i') {
+            return '1'
+        } else if (x === 'o') {
+            return '0'
+        } else if (x === 's') {
+            return '5'
+        } else {
+            return x;
+        }
+    });
+    return res.join("");
+}
+
+hackerSpeak("javascript is cool");
