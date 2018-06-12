@@ -385,6 +385,7 @@ removeSpecialCharacters("Etiam#!!!!!,,, [`po%rta ~sem!] {male*su-ada} (ma*gna) m
 // 27. Sort elements in object based on values >= 60 and sort them descending.
 function myLanguages(results) {
     let elements = [];
+    let myRes = [];
     for (item in results) {
         elements.push([item, results[item]])
     }
@@ -401,3 +402,12 @@ function myLanguages2(results2) {
 }
 
 myLanguages({"Java" : 61, "Ruby" : 80, "Python" : 95, "Haskell": 40, "Polish": 100, "SQL": 50});
+
+// 28. Return the Highest and Lowest Numbers
+
+function highLow(str) {
+    let arr = str.split(" ");
+    return Math.max.apply(null, arr) + " " + Math.min.apply(null, arr)
+}
+
+highLow("4 5 29 54 4 0 -214 542 -64 1 -3 6 -6");
