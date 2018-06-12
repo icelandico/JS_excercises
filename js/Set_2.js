@@ -429,4 +429,26 @@ function matrix(x, y, z) {
     return res;
 }
 
+// Shorthand
+
+function matrix2(x,y,z) {
+    return Array(x).fill(Array(y).fill(z))
+}
+
 matrix(2, 1, "edabit");
+
+// 30. Reverse the Order of Words with Five Letters or More
+
+function reverse(str) {
+    let arra = str.split(" ")
+    let res = arra.map(function(x) {
+        if (x.length >= 5) {
+            return x.split("").reverse().join("")
+        } else {
+            return x;
+        }
+    })
+    return res.join(" ");
+}
+
+console.log(reverse("Reverse the order of every word greater than or equal to five characters."));
