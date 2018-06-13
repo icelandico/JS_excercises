@@ -478,3 +478,38 @@ function hackerSpeak(str) {
 }
 
 hackerSpeak("javascript is cool");
+
+// 32. If the pizza is less than €5,- Michael invites Kate (i.e. he is paying the full price)
+// Otherwise Kate will also contribute 1/3 of the price, but no more than €10 (she's broke :-) Thus, Michael will pay 2/3 of the costs, or more.
+
+function michaelPays(costs) {
+    let kateCash = costs / 3;
+    if (costs < 5) {
+        return parseFloat(costs.toFixed(2))
+    } else if (costs > 10) {
+        if (kateCash >= 10) {
+            return parseFloat(((costs -10).toFixed(2)))
+        } else {
+            return parseFloat(((costs * 2) / 3).toFixed(2))
+        }
+    }
+}
+
+michaelPays(5.9181);
+
+// 33. ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but
+//     exactly 4 digits or exactly 6 digits.
+
+function validatePIN(pin) {
+    console.log(pin.length);
+    let expr = new RegExp(/[\D]/);
+    if (expr.test(pin)) {
+        return false
+    } else if (pin.length !== 4 && pin.length !== 6)  {
+        return false
+    } else {
+        return true
+    }
+}
+
+validatePIN("1234");
