@@ -32,3 +32,16 @@ function pigIt(str){
 
 pigIt("Hello world !");
 
+// 3. Retsec. You're given a single word. Your task is to swap the halves. If the word has an uneven length,
+// leave the character in the middle at that position and swap the chunks around it.
+
+function reverseByCenter(s){
+    let middle = s.length  / 2;
+    if (s.length % 2 === 0) {
+        return s.slice(s.length / 2) + s.slice(0, s.length / 2)
+    } else {
+        return (s.slice(Math.ceil(middle)) + (s[Math.floor(middle)]) + s.slice(0, Math.floor(middle)))
+    }
+}
+
+reverseByCenter('Copacabana');
