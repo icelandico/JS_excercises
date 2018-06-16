@@ -45,3 +45,11 @@ function reverseByCenter(s){
 }
 
 reverseByCenter('Copacabana');
+
+// 4. Reverse letters in sentence
+
+function rev(sentence) {
+    return (sentence.split(" ")).map(x => x.split("").reverse().join("")).join(" ");
+}
+
+rev("String to reverse");
