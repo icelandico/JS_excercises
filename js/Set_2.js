@@ -233,7 +233,7 @@ splitAndMerge("My name is John",".");
 
     function maxMultiple(divisor, bound) {
         i = 0;
-        result = 0;
+        var result = 0;
         while (i <= bound) {
             if (i % divisor === 0) {
                 result = i;
@@ -513,3 +513,6 @@ function validatePIN(pin) {
 }
 
 validatePIN("1234");
+
+
+
