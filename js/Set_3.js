@@ -53,3 +53,15 @@ function rev(sentence) {
 }
 
 rev("String to reverse");
+
+// 5. Reverse a number
+
+function reverseNumber(n) {
+    n = (n.toString()).split("");
+    return (n.indexOf('-') > -1) ? parseInt('-' + n.reverse().join("")) : parseInt(n.reverse().join(""))
+}
+
+reverseNumber(-123);
+
+
+
