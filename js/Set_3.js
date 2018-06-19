@@ -89,4 +89,19 @@ function strCount(str, letter){
   return (str.split("").filter(x => x === letter)).length
 }
 
-console.log(strCount('Hello', 'l'));
+strCount('Hello', 'l');
+
+// 8. Merge arrays and display in ascending order unique numbers
+
+function mergeArrays(arr1, arr2) {
+  var b = (arr1.concat(arr2)).sort((a,b) => a-b);
+  let result = [];
+  for (let i = 0; i < b.length; i++) {
+    if (result.indexOf(b[i]) === -1) {
+      result.push(b[i])
+    }
+  }
+  return result
+}
+
+mergeArrays([1,3,5,7,9,11,2,3], [10,8,4,1,7,6,4,2]);
