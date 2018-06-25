@@ -105,3 +105,50 @@ function mergeArrays(arr1, arr2) {
 }
 
 mergeArrays([1,3,5,7,9,11,2,3], [10,8,4,1,7,6,4,2]);
+
+// 9.Replace all polish letters from string
+
+const polish = {
+  'ą' : 'a',
+  'ć' : 'c',
+  'ę' : 'e',
+  'ł' : 'l',
+  'ń' : 'n',
+  'ó' : 'o',
+  'ś' : 's',
+  'ź' : 'z',
+  'ż' : 'z'
+};
+
+function correctPolish(str) {
+  let result = str
+    .split('')
+    .map(letter => polish[letter] || letter);
+  return result.join("")
+}
+
+correctPolish('Jędrzej Błądziński');
+
+function movie(card, ticket, perc) {
+  let priceRegular = 0;
+  let pricePerk = card;
+  let i = 1;
+  while (priceRegular <= Math.ceil(pricePerk)){
+    priceRegular += ticket;
+    pricePerk += (ticket * Math.pow(perc, i)) * perc;
+    i++
+  }
+  return i;
+};
+
+movie(100, 10, 0.95);
+
+function isAnagram(s1, s2) {
+  let letters = new RegExp(/[a-zA-Z]/gi);
+  s1 = ((s1.match(letters)).map(x => x.toLowerCase())).sort();
+  s2 = (s2.match(letters)).map(x => x.toLowerCase()).sort();
+
+  return (JSON.stringify(s1) === JSON.stringify((s2)))
+}
+
+isAnagram('Dave Barry', 'Ray Adverb');
