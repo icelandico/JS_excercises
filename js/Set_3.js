@@ -129,6 +129,7 @@ function correctPolish(str) {
 
 correctPolish('Jędrzej Błądziński');
 
+
 function movie(card, ticket, perc) {
   let priceRegular = 0;
   let pricePerk = card;
@@ -143,6 +144,8 @@ function movie(card, ticket, perc) {
 
 movie(100, 10, 0.95);
 
+// 10. Check if given string is an anagram
+
 function isAnagram(s1, s2) {
   let letters = new RegExp(/[a-zA-Z]/gi);
   s1 = ((s1.match(letters)).map(x => x.toLowerCase())).sort();
@@ -152,3 +155,50 @@ function isAnagram(s1, s2) {
 }
 
 isAnagram('Dave Barry', 'Ray Adverb');
+
+// 11. Sort elements in array. Put *** between every word of the first word in sorted array
+
+function twoSort(s) {
+  s = (s.sort()[0]).split("");
+  return s.map(function (item, index) {
+    if (index < s.length - 1) {
+      return item + '***'
+    } else { return item}
+  }).join("")
+}
+
+twoSort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"]);
+
+// 12. Return the maximum number that can be formed from integers in number given
+
+function maxNumber(n){
+  return parseInt((n.toString().split("")).map(x => parseInt(x)).sort((a,b) => b - a).join(""));}
+
+maxNumber(566797);
+
+// 13. Given an array of words, return an array of the number of letters that occupy their positions in the alphabet
+// for each word. For example, solve(["abode","ABc","xyzD"]) = [4,3,1].
+
+function solve(arr){
+  let alphaPos = { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10, k: 11, l: 12, m: 13, n: 14, o: 15, p: 16,
+    q: 17, r: 18, s: 19, t: 20, u: 21, v: 22, w: 23, x: 24, y: 25, z: 26 };
+  arr = (arr.map(word => word.toLowerCase())).map(word => word.split(""));
+  result = arr.map(word => word.map(function(letter, index) {
+    return (index + 1 === alphaPos[letter])? 1 : 0;
+  }));
+  return (result.length === 0 )? [0] : result.map(element => element.reduce((a,b) => a +b ))
+}
+
+solve(['aata', 'ybad', 'ooc']);
+
+// 14. In array two insert copied element from array one in order, at given position (n)
+
+function frankenSplice(arr1, arr2, n) {
+  let result = arr2.slice(0);
+  for (let i = 0 ; i < arr1.length; i++) {
+    result.splice(n + i, 0, arr1[i]);
+  }
+  return result;
+}
+
+frankenSplice([1, 2], ["a", "b"], 1); // should return ["a", 1, 2, "b"].
