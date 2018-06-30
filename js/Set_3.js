@@ -202,3 +202,17 @@ function frankenSplice(arr1, arr2, n) {
 }
 
 frankenSplice([1, 2], ["a", "b"], 1); // should return ["a", 1, 2, "b"].
+
+// 15. Check if numbers given in array are in ascending order
+
+function inAscOrder(arr) {
+  let i = 0;
+  while (i <= arr.length-1) {
+    if (arr[i+1] - arr[i] <= 0) {
+      return false
+    }
+    i++
+  } return true
+}
+
+inAscOrder([1, 2, 4, 7, 19]);
