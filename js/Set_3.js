@@ -216,3 +216,40 @@ function inAscOrder(arr) {
 }
 
 inAscOrder([1, 2, 4, 7, 19]);
+
+// 16. Return array with all combinations with letters in string. Combination means that each string has 'shifted' order
+// letters by one.
+
+function scrollingText(text){
+  let result = [];
+  for (let i = 0 ; i < text.length; i++) {
+    var expression = text.substring(i) + text.substring(0, i);
+    result.push(expression.toUpperCase())
+  }
+  return result;
+}
+
+scrollingText('codewars');
+
+function likes(names) {
+  return names.join(" and ") + ' like this'
+}
+
+likes(['Jacob', 'Alex']);  // 'Jacob and Alex like this'
+
+// 17. You need to return the highest scoring word as a string
+
+let letterPositions = { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10, k: 11, l: 12, m: 13, n: 14, o: 15, p: 16,
+  q: 17, r: 18, s: 19, t: 20, u: 21, v: 22, w: 23, x: 24, y: 25, z: 26 };
+
+function high(x){
+  let string = x.split(" ").map(x => x.split(""));
+  let stringToPoints = string.map(word => word.map(letter => letter = letterPositions[letter]));
+  stringToPoints.forEach(function (pointsArray, index) {
+    return stringToPoints[index] = pointsArray.reduce((a,b) => a + b)
+  });
+  let indexOfHighest = stringToPoints.indexOf(Math.max.apply(null, stringToPoints))
+  return string[indexOfHighest].join("")
+}
+
+high('man i need a taxi up to ubud');
