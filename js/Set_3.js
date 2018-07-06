@@ -247,3 +247,12 @@ function high(x){
 }
 
 high('man i need a taxi up to ubud');
+
+// 18. Reverse words that consists of 5 or more letters
+
+function spinWords(str){
+  let string = str.split(" ");
+  return string.map(word => word.length >= 5 ? word.split("").reverse().join("") : word).join(" ");
+}
+
+console.log(spinWords('Hey fellow warriors'));
