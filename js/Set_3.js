@@ -255,4 +255,28 @@ function spinWords(str){
   return string.map(word => word.length >= 5 ? word.split("").reverse().join("") : word).join(" ");
 }
 
-console.log(spinWords('Hey fellow warriors'));
+spinWords('Hey fellow warriors');
+
+// 19. Digital Root calculation
+
+function digital_root(n) {
+  let digitArray = n.toString().split("").map(Number);
+  let digitArraySum = n.toString().split("").map(Number).reduce((a,b) => a + b);
+  return digitArray.join(' + ') + ' = ' + digitArraySum;
+}
+
+digital_root(942);
+
+// 20. Reorder string with given positions in array. For example "sequence" should return 'encqusee'
+
+function remix(str, arr) {
+  let stringArray = str.split("");
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result[arr[i]] = stringArray[i]
+  }
+  return result.join("")
+}
+
+remix("sequence", [5, 7, 3, 4, 0, 1, 2, 6]);
+
