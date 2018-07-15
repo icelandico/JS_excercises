@@ -280,3 +280,16 @@ function remix(str, arr) {
 
 remix("sequence", [5, 7, 3, 4, 0, 1, 2, 6]);
 
+// 21. Find the Shortest Word(s) in a Sentence. Don't consider digits and special signs.
+
+function findShortestWords(str) {
+  let regularExpr = new RegExp(/[a-zA-Z'’]+/g);
+  let validString =  str.toLowerCase().match(regularExpr);
+  console.log(validString);
+  let minWordLength = Math.min(...validString.map(word => word.length));
+  let result = validString.filter(word => word.length === minWordLength);
+  return result.sort();
+}
+
+findShortestWords("You miss 100% of the shots you don’t take.");
+
