@@ -285,11 +285,34 @@ remix("sequence", [5, 7, 3, 4, 0, 1, 2, 6]);
 function findShortestWords(str) {
   let regularExpr = new RegExp(/[a-zA-Z'’]+/g);
   let validString =  str.toLowerCase().match(regularExpr);
-  console.log(validString);
   let minWordLength = Math.min(...validString.map(word => word.length));
   let result = validString.filter(word => word.length === minWordLength);
   return result.sort();
 }
 
 findShortestWords("You miss 100% of the shots you don’t take.");
+
+// 22. Find the sum of all numbers divisable by 3 or 5 below the given numbers
+
+function solution(number){
+  let nums = [];
+  for (let i = 0; i < number; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      nums.push(i)
+    }
+  }
+  return nums.reduce((a,b) => a + b);
+}
+
+solution(10);
+
+// 23. Return string in given format. Input: 'Sjklz', Output: 'S-Jj-Kkk-Llll-Zzzzz'
+
+function accum(s) {
+  let string = s.split("");
+  let result =  string.map((letter, index) => letter = letter.toUpperCase() + letter.repeat(index).toLowerCase());
+  return result.join("-")
+}
+
+accum("ZpglnRxqenU");
 
