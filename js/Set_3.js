@@ -326,3 +326,12 @@ function findOutlier(integers){
 
 findOutlier([2,2,2,3]);
 
+// 25. Mask first digits with '#' sign. Only last 4 digits shall be visible
+
+function maskify(cc) {
+  let string = Array.from(cc);
+  let digitsToMask = string.slice(0, -4).map(char => char = '#').join('');
+  return digitsToMask + string.slice(-4).join('');
+}
+
+maskify('1234567890');
