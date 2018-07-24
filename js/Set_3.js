@@ -316,3 +316,13 @@ function accum(s) {
 
 accum("ZpglnRxqenU");
 
+// 24. Find the number that does not match the rest of array elements (even or odd values)
+
+function findOutlier(integers){
+  let odds = integers.filter(number => number % 2 !== 0);
+  let evens = integers.filter(number => number % 2 === 0);
+  return odds.length > evens.length ? evens.join("") : odds.join("");
+}
+
+findOutlier([2,2,2,3]);
+
