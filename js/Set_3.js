@@ -335,3 +335,43 @@ function maskify(cc) {
 }
 
 maskify('1234567890');
+
+// 26. Create a phone number in given format, i.e: (123) '456-789'
+
+function createPhoneNumber(numbers){
+  numbers.splice(0,0,'(');
+  numbers.splice(4,0,')');
+  numbers.splice(5,0,' ');
+  numbers.splice(9,0,'-');
+  return numbers.join('')
+}
+
+createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+
+// 27. Create a function that compares arrays and gives elements which are not in both of them.
+
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  var orderedArrays = [...arguments].sort((a, b) => b.length - a.length);
+  return orderedArrays[0].filter(item => !orderedArrays[1].includes(item))
+                         .concat(orderedArrays[1].filter(item => !orderedArrays[0].includes(item)))
+}
+
+diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]);
+
+// 28. Create square from given side length
+
+function createSquare(length){
+  var squareCharacter = '#';
+  if (length === 1) {
+    return '#';
+  } else if (length > 1) {
+    return squareCharacter.repeat(length) + ('\n' + squareCharacter + ' '.repeat(length - 2) + squareCharacter)
+                          .repeat(length - 2) + '\n'
+                          + squareCharacter.repeat(length)
+  } else {
+    return ''
+  }
+}
+
+createSquare(15);
