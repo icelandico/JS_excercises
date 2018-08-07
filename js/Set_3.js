@@ -375,3 +375,18 @@ function createSquare(length){
 }
 
 createSquare(15);
+
+// 28. Check if letters in array two are present in array one.
+
+function letterCheck(arr) {
+  var firstString = arr[0].toLowerCase();
+  var secondString = arr[1].toLowerCase();
+  for (let i = 0; i < secondString.length; i++) {
+    if (firstString.indexOf((secondString[i])) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
+
+letterCheck(["drapes", "compadres"]);
