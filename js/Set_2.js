@@ -183,7 +183,6 @@ function updateRecords(id, prop, value) {
     } else {
       if (prop === "tracks") {
         collection[id]["tracks"].push(value);
-        console.log("HEEE")
       } else {
         collection[id][prop] = value;
       }
@@ -286,7 +285,6 @@ noSpace('8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd');
 const sum = (function (x, y, z, ...args) {
   const argsTwo = [x, y, z];
   return function sum(...args) {
-
     return args.reduce((a, b) => a + b, 0);
   };
 })();
@@ -296,18 +294,12 @@ sum(1, 2, 3, 4, 5); // 6
 // 22. Change string so the lowercase becomes uppercase and reverse
 
 function alternateCase(str) {
-  let result = "";
-  for (letter in str) {
-    if (str[letter] === str[letter].toLowerCase()) {
-      result += str[letter].toUpperCase()
-    } else {
-      result += str[letter].toLowerCase()
-    }
-  }
-  return result
+  let stringArray = str.split('');
+  return stringArray.map(letter => letter === letter.toUpperCase() ? letter.toLowerCase() : letter.toUpperCase())
+                    .join('')
 }
 
-alternateCase("cHangE CASe OF thiS strING");
+console.log(alternateCase("cHangE CASe OF thiS strING"));
 
 // 23. Create a function that takes an array of positive and negative numbers.
 // Return an array where the first element is the count of positive numbers and the second element is the
@@ -500,7 +492,6 @@ michaelPays(5.9181);
 //     exactly 4 digits or exactly 6 digits.
 
 function validatePIN(pin) {
-  console.log(pin.length);
   let expr = new RegExp(/[\D]/);
   if (expr.test(pin)) {
     return false
@@ -512,6 +503,3 @@ function validatePIN(pin) {
 }
 
 validatePIN("1234");
-
-
-

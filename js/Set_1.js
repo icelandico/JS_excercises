@@ -91,7 +91,7 @@ function mutation(arr) {
   }
 }
 
-console.log(mutation(["hello", "hey"]));
+mutation(["hello", "hey"]);
 
 // 8. Remove all falsy values from an array
 

@@ -390,3 +390,20 @@ function letterCheck(arr) {
 }
 
 letterCheck(["drapes", "compadres"]);
+
+var activity = [ { username: 'Lucy', status: 'offline', lastActivity: 22 },
+  { username: 'Bob', status: 'online', lastActivity: 104 } ];
+
+const whosOnline = (friends) => {
+  let online = friends.filter(person => person.status === 'online' && person.lastActivity <= 10).map(userData => userData.username);
+  let offline = friends.filter(person => person.status === 'offline').map(userData => userData.username);
+  let away = friends.filter(person => person.status === 'online' && person.lastActivity > 10).map(userData => userData.username)
+  let resultSet = {}
+
+  return Object.assign(resultSet, online.length !== 0 ? { online: online } : null,
+                                  offline.length !== 0 ? { offline: offline } : null,
+                                  away.length !== 0 ? { away: away } : null)
+
+};
+
+console.log(whosOnline(activity));
