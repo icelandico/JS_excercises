@@ -391,8 +391,12 @@ function letterCheck(arr) {
 
 letterCheck(["drapes", "compadres"]);
 
-var activity = [ { username: 'Lucy', status: 'offline', lastActivity: 22 },
-  { username: 'Bob', status: 'online', lastActivity: 104 } ];
+// 29. Check who's active. 
+
+var activity = [
+  { username: 'Lucy', status: 'offline', lastActivity: 22 },
+  { username: 'Bob', status: 'online', lastActivity: 104 } 
+];
 
 const whosOnline = (friends) => {
   let online = friends.filter(person => person.status === 'online' && person.lastActivity <= 10).map(userData => userData.username);
@@ -406,4 +410,23 @@ const whosOnline = (friends) => {
 
 };
 
-console.log(whosOnline(activity));
+whosOnline(activity);
+
+// 30. Count how many unlucky numbers are in the given year
+
+function unluckyDays(year){
+  return year
+}
+
+unluckyDays(1486)
+
+// 31. Create a function that takes a string and returns a new string with each
+// new character accumulating by +1. Separate each set with a dash.
+
+function accum(str) {
+  let stringArray = str.split('')
+  let lettersCompunded = stringArray.map((letter, index) => letter.toUpperCase() + letter.toLowerCase().repeat(index))
+  return lettersCompunded.join('-')
+}
+
+console.log(accum('wzrw'))
