@@ -429,4 +429,16 @@ function accum(str) {
   return lettersCompunded.join('-')
 }
 
-console.log(accum('wzrw'))
+accum('wzrw')
+
+// 32. You have an array of integers, and for each index you want
+// to find the product of every integer except the integer at that index.
+
+function getProducts(arr) {
+  return arr.map((item, index) => 
+         arr.filter(element => element !== arr[index]))
+         .map(arrayItem => arrayItem
+         .reduce((a, b) => a * b))
+}
+
+getProducts([1, 7, 3, 4])
