@@ -442,3 +442,17 @@ function getProducts(arr) {
 }
 
 getProducts([1, 7, 3, 4])
+
+// 33. Find odd integer in the array
+
+function findOdd(A) {
+  const numbersObject = {};
+  let result = 0;
+  for (item in A) {
+    numbersObject[(A[item])] = A.filter(number => number === A[item]).length
+  }
+  for (number in numbersObject) {
+    numbersObject[number] % 2 !== 0 ? result = parseInt(number) : true
+  }
+  return result;
+}
