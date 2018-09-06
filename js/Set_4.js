@@ -127,8 +127,15 @@ function dropElements(arr, func) {
   return index > -1 ? arr.slice(index) : [] ;
 }
 
+// 9. Flatten nested array of arrays
+
 dropElements([1, 2, 3, 4], function(n) {return n > 5;});
 
+function steamrollArray(arr) {
+  return arr.reduce((a, b) => Array.isArray(b) ? a.concat(steamrollArray(b)) : a.concat(b), [])
+}
+
+steamrollArray([1, {}, [3, [[4]]]]);
 
 
 
