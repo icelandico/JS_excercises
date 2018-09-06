@@ -24,7 +24,6 @@ uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]);
 // 3. Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
 
 function convertHTML(str) {
-  const htmlEntities = new RegExp(/[&<>"]/g);
   const entities = {
     "&": "&amp;",
     "<": "&lt;",
