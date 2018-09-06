@@ -11,3 +11,13 @@ function translatePigLatin(str) {
 }
 
 translatePigLatin('dalbert')
+
+// 2. Given several arrays, create new array containing only unique elements for all of input arrays.
+
+function uniteUnique(a,...arr) {
+  const flattenArray = a.concat(arr.reduce((a, b) => a.concat(b)));
+  return Array.from(new Set(flattenArray))
+}
+
+uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]);
+
