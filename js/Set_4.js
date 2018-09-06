@@ -116,7 +116,20 @@ function binaryAgent(str) {
   return result
 }
 
-console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
+binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+
+// 8. Given the array arr, iterate through and remove
+// each element starting from the first element (the 0 index)
+// until the function func returns true when the iterated element is passed through it.
+
+function dropElements(arr, func) {
+  const index = arr.map(item => func(item) ? true : false).indexOf(true)
+  return index > -1 ? arr.slice(index) : [] ;
+}
+
+dropElements([1, 2, 3, 4], function(n) {return n > 5;});
+
+
 
 
 
