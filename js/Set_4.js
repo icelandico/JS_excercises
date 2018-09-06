@@ -63,7 +63,7 @@ function sumPrimes(num) {
     }
   }
   function isPrime(num) {
-    for(var i = 2; i < num; i++) {
+    for(let i = 2; i < num; i++) {
       if (num % i === 0) {
         return false
       }
@@ -75,9 +75,11 @@ function sumPrimes(num) {
 
 sumPrimes(10);
 
-// 6. Writ a constructor with sixt keys
+// 6. Writ a constructor with sixt keys: 
+// getFirstName() getLastName() getFullName()
+// setFirstName(first) setLastName(last) setFullName(firstAndLast)
 
-var Person = function(firstAndLast) {
+const Person = function(firstAndLast) {
   const nameArray = firstAndLast.split(' ');
 
   this.getFullName = function() {
@@ -102,12 +104,21 @@ var Person = function(firstAndLast) {
   }
 };
 
-var bob = new Person('Bob Ross');
+const bob = new Person('Bob Ross');
 bob.setFullName("Haskell Curry")
 bob.getFullName();
 
+// 7. Return an English translated sentence of the passed binary string.
 
-// getFirstName() getLastName() getFullName() setFirstName(first) setLastName(last) setFullName(firstAndLast
+function binaryAgent(str) {
+  const stringArray = str.split(' ');
+  const result = stringArray.map(number => String.fromCharCode(parseInt(number, 2))).join('')
+  return result
+}
+
+console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
+
+
 
 
 
