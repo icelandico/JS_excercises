@@ -53,5 +53,66 @@ function sumFibs(num) {
 
 sumFibs(10);
 
+// 5. Sum All Primes up to given number
+
+function sumPrimes(num) {
+  let primes = [];
+  for (let i = 0; i <= num; i++) {
+    if (isPrime(i)) {
+      primes.push(i);
+    }
+  }
+  function isPrime(num) {
+    for(var i = 2; i < num; i++) {
+      if (num % i === 0) {
+        return false
+      }
+    }
+    return num !== 1
+  }
+  return primes.reduce((a, b) => a + b)
+}
+
+sumPrimes(10);
+
+// 6. Writ a constructor with sixt keys
+
+var Person = function(firstAndLast) {
+  const nameArray = firstAndLast.split(' ');
+
+  this.getFullName = function() {
+    return nameArray[0] + ' ' + nameArray[1];
+  };
+  this.getFirstName = function() {
+    return nameArray[0]
+  }
+  this.getLastName = function() {
+    return nameArray[1]
+  }
+  this.setFirstName = function(firstName) {
+    nameArray[0] = firstName
+  }
+  this.setLastName = function(lastName) {
+    nameArray[1] = lastName
+  }
+  this.setFullName = function(firstAndLast) {
+    const fullNameArray = firstAndLast.split(' ')
+    nameArray[0] = fullNameArray[0]
+    nameArray[1] = fullNameArray[1]
+  }
+};
+
+var bob = new Person('Bob Ross');
+bob.setFullName("Haskell Curry")
+bob.getFullName();
+
+
+// getFirstName() getLastName() getFullName() setFirstName(first) setLastName(last) setFullName(firstAndLast
+
+
+
+
+
+
 
 
