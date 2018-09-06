@@ -35,5 +35,23 @@ function convertHTML(str) {
   return str.split('').map(item => item.replace(item, entities[item] || item)).join('')
 }
 
-console.log(convertHTML("Schindler's List"));
+convertHTML("Schindler's List");
+
+// 4. Sum All Odd Fibonacci Numbers
+
+function sumFibs(num) {
+  let sequence = [0, 1];
+  let sumOdds = 0;
+  for (let i = 2; i <= num; i++) {
+    sequence.push(sequence[i - 1] + sequence[i - 2]);
+  }
+  let sum = sequence.filter(number => 
+    number <= num && number % 2 !== 0 ? sumOdds += number : false)
+    .reduce((a, b) => a + b);
+    return sum
+}
+
+sumFibs(10);
+
+
 
