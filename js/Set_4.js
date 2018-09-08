@@ -137,6 +137,26 @@ function steamrollArray(arr) {
 
 steamrollArray([1, {}, [3, [[4]]]]);
 
+function addTogether() {
+  const args = Object.keys(arguments).map(value => arguments[value])
+  return args.reduce((a,b) => a + b)
+}
+
+addTogether(2,3);
+
+// 10. Convert string to Spinal Tap Case. Spinal case is all-lowercase-words-joined-by-dashes.
+
+function spinalCase(str) {
+  const splitChars = new RegExp(/(?=[A-Z])|[\s_-]/g);
+  const stringArray = str.split(splitChars).map(item => item.toLowerCase());
+  return stringArray.join('-')
+}
+
+console.log(spinalCase('thisIsSpinalTap'));
+
+
+
+
 
 
 
