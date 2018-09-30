@@ -75,39 +75,6 @@ function sumPrimes(num) {
 
 sumPrimes(10);
 
-// 6. Writ a constructor with sixt keys: 
-// getFirstName() getLastName() getFullName()
-// setFirstName(first) setLastName(last) setFullName(firstAndLast)
-
-const Person = function(firstAndLast) {
-  const nameArray = firstAndLast.split(' ');
-
-  this.getFullName = function() {
-    return nameArray[0] + ' ' + nameArray[1];
-  };
-  this.getFirstName = function() {
-    return nameArray[0]
-  }
-  this.getLastName = function() {
-    return nameArray[1]
-  }
-  this.setFirstName = function(firstName) {
-    nameArray[0] = firstName
-  }
-  this.setLastName = function(lastName) {
-    nameArray[1] = lastName
-  }
-  this.setFullName = function(firstAndLast) {
-    const fullNameArray = firstAndLast.split(' ')
-    nameArray[0] = fullNameArray[0]
-    nameArray[1] = fullNameArray[1]
-  }
-};
-
-const bob = new Person('Bob Ross');
-bob.setFullName("Haskell Curry")
-bob.getFullName();
-
 // 7. Return an English translated sentence of the passed binary string.
 
 function binaryAgent(str) {
@@ -127,22 +94,15 @@ function dropElements(arr, func) {
   return index > -1 ? arr.slice(index) : [] ;
 }
 
-// 9. Flatten nested array of arrays
-
 dropElements([1, 2, 3, 4], function(n) {return n > 5;});
+
+// 9. Flatten nested array of arrays
 
 function steamrollArray(arr) {
   return arr.reduce((a, b) => Array.isArray(b) ? a.concat(steamrollArray(b)) : a.concat(b), [])
 }
 
 steamrollArray([1, {}, [3, [[4]]]]);
-
-function addTogether() {
-  const args = Object.keys(arguments).map(value => arguments[value])
-  return args.reduce((a,b) => a + b)
-}
-
-addTogether(2,3);
 
 // 10. Convert string to Spinal Tap Case. Spinal case is all-lowercase-words-joined-by-dashes.
 
@@ -152,18 +112,22 @@ function spinalCase(str) {
   return stringArray.join('-')
 }
 
-console.log(spinalCase('thisIsSpinalTap'));
+spinalCase('thisIsSpinalTap');
 
+// 11. Count the letters in string and present it with Object
 
+function count (string) {
+  let stringArray = string.split('');
+  let result = string !== '' ? Object.assign(...stringArray.map(item => ({ [item] : 0}))) : {};
+  stringArray.forEach(item => result[item] += 1)
+  return result
+}
 
+count('aaaabhyyyba')
 
+// 12. Merge arrays with consecutive indexes from both arrays
+function mergeArrays(a, b) {
+  return a.map((item, index) => [item, b[index]])
+}
 
-
-
-
-
-
-
-
-
-
+mergeArrays(["f", "d", "w", "t"], [5, 3, 7, 8]); // ["f", 5, "d", 3 ...]
