@@ -131,3 +131,13 @@ function mergeArrays(a, b) {
 }
 
 mergeArrays(["f", "d", "w", "t"], [5, 3, 7, 8]); // ["f", 5, "d", 3 ...]
+
+// 13. Return index of value (+1) which differs from others in array (odd or even)
+function iqTest(numbers){
+  const numbersArray = numbers.split(' ').map(Number)
+  const evens = numbersArray.filter(number => number % 2 === 0)
+  const odds = numbersArray.filter(number => number % 2 !== 0)
+  return evens.length > odds.length ? numbersArray.indexOf(odds[0]) + 1 : numbersArray.indexOf(evens[0]) + 1
+}
+
+iqTest("5 3 2") // 2
