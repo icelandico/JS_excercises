@@ -141,3 +141,20 @@ function iqTest(numbers){
 }
 
 iqTest("5 3 2") // 2
+
+// 14. Find how manyletters occurs more than once in string
+
+function duplicateCount(text){
+  const textArray = text.toLowerCase().split('');
+  let result = 0;
+  let counts = Object.assign({}, ...textArray.map(item => ({ [item] : 0})));
+  for (let i = 0; i < textArray.length; i++) {
+    counts[textArray[i]] += 1
+  }
+  for (key in counts) {
+    counts[key] > 1 ? result += 1 : false
+  }
+  return result
+}
+
+duplicateCount('aabcabbcxz') // 3
