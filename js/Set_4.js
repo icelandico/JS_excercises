@@ -158,3 +158,17 @@ function duplicateCount(text){
 }
 
 duplicateCount('aabcabbcxz') // 3
+
+// 15. 
+
+function findMissingLetter(array) {
+  const letters = array.map(letter => letter.charCodeAt());
+  let desiredLetters = [];
+  for (let i = letters[0]; i <= letters[letters.length - 1]; i++) {
+    desiredLetters.push(String.fromCharCode(i))
+  }
+  return desiredLetters.filter(item => array.indexOf(item) === -1).join('')
+}
+
+
+findMissingLetter(['O','Q','R','S'])
