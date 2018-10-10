@@ -159,7 +159,7 @@ function duplicateCount(text){
 
 duplicateCount('aabcabbcxz') // 3
 
-// 15. 
+// 15. Find missing letters in string basing on alphabetical order
 
 function findMissingLetter(array) {
   const letters = array.map(letter => letter.charCodeAt());
@@ -172,3 +172,9 @@ function findMissingLetter(array) {
 
 
 findMissingLetter(['O','Q','R','S'])
+
+let numbers = [10,9,5,1,3,15]
+
+let min = Math.min(...numbers)
+
+console.log(min)

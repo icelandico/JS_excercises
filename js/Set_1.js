@@ -249,13 +249,12 @@ function oddOrEven(array) {
 
 // Using reduce();
 
-function oddOrEven2(x) {
-  return (x.reduce(function (x, y) {
-    return x + y
-  }));
+function oddsOrEvens(x) {
+  const sum = x.reduce((x, y) => (x + y), 0);
+  return sum % 2 === 0 ? 'even' : 'odd';
 }
 
-oddOrEven([1, 2, 3, 98]);
+oddsOrEvens([1, 2, 3, 98]);
 
 // 17. Given two speeds v1 (A's speed, integer > 0) and v2 (B's speed, integer > 0) and a lead g (integer > 0) how long
 //    will it take B to catch A? The result will be an array [hour, min, sec] which is the time needed in hours,
