@@ -300,12 +300,9 @@ abc;
 // 19. Detect Pangram sentence. Ignore signs different than letters.
 
 function pangram(sentence) {
-  sentence = Array.from(new Set(sentence.toLowerCase().split("").filter(x => x.match(/[a-zA-Z]/))));
-  if (sentence.length === 26) {
-    return "This is a pangram!!"
-  } else {
-    return "It's not a pangram"
-  }
+  const newSentence = Array.from(new Set(sentence.toLowerCase().split("").filter(x => x.match(/[a-zA-Z]/))));
+  const sentenceLength = newSentence.length;
+  return sentenceLength === 26 ? 'This is a pangram' : 'It\'s not a pangram';
 }
 
 pangram("The quick brown fox jumps over the lazy dog.!?");
