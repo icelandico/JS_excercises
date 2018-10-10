@@ -312,12 +312,10 @@ pangram("The quick brown fox jumps over the lazy dog.!?");
 // original string.
 
 function duplicateEncode(word) {
-  word = word.toLowerCase().split("");
+  const wordToUse = word.toLowerCase().split("");
   let count = {};
-  let counter = word.map(function (x) {
-    count[x] = (count[x] || 0) + 1;
-  });
-  let result = word.map(function (y) {
+  wordToUse.map(x => count[x] = (count[x] || 0) + 1);
+  let result = wordToUse.map(function (y) {
     if (count[y] > 1) {
       return ')';
     } else {
@@ -327,7 +325,7 @@ function duplicateEncode(word) {
   return result.join("")
 }
 
-duplicateEncode("Aaa b cc n");
+console.log(duplicateEncode("Aaa b cc n"));
 
 // 21. Transform given string to Nato phonetic standard
 
