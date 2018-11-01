@@ -170,11 +170,28 @@ function findMissingLetter(array) {
   return desiredLetters.filter(item => array.indexOf(item) === -1).join('')
 }
 
-
 findMissingLetter(['O','Q','R','S'])
 
-let numbers = [10,9,5,1,3,15]
+// 16. Deep comparison of objects 
 
-let min = Math.min(...numbers)
+function deepEqual(a, b){
+  if (a && b && typeof a == 'object' && typeof b == 'object') {
+    if (Object.keys(a).length != Object.keys(b).length) return false;
+    for (var key in a) if (!deepEqual(a[key], b[key])) return false;
+    return true;
+  } else return a === b
+}
 
-console.log(min)
+const ob1 = {
+  name: "Joe",
+  age: 20,
+  city: "Atlanta"
+}
+
+const ob2 = {
+  name: "Joe",
+  age: 20,
+  city: "Atlanta"
+}
+
+deepCompare(ob1, ob2)

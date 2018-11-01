@@ -325,7 +325,7 @@ function duplicateEncode(word) {
   return result.join("")
 }
 
-console.log(duplicateEncode("Aaa b cc n"));
+duplicateEncode("Aaa b cc n");
 
 // 21. Transform given string to Nato phonetic standard
 
