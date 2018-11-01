@@ -179,7 +179,8 @@ function deepEqual(a, b){
     if (Object.keys(a).length != Object.keys(b).length) return false;
     for (var key in a) if (!deepEqual(a[key], b[key])) return false;
     return true;
-  } else return a === b
+  } 
+  else return a === b
 }
 
 const ob1 = {
@@ -194,4 +195,70 @@ const ob2 = {
   city: "Atlanta"
 }
 
-deepCompare(ob1, ob2)
+deepEqual(ob1, ob2)
+
+// 17. Vowels back
+
+function vowelBack(s){
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  const revertable = ['c', 'o', 'd', 'e'];
+  function testChar(code) {
+    if (revertable.includes(String.fromCharCode(code))) {
+      return code
+    } else {}
+  }
+  const letters = Array.from(s).map(letter => letter.charCodeAt())
+  const newLetters = letters.map(function (code) {
+    if (String.fromCharCode(code) === 'c' || String.fromCharCode(code) === 'o' ) {
+      return code -= 1;
+    }
+    else if (String.fromCharCode(code) === 'd') {
+      return code -= 3;
+    } 
+    else if(String.fromCharCode(code) === 'e') {
+      return code -= 4;
+    } 
+    else if (vowels.includes(String.fromCharCode(code))) {
+      if (code - 5 < 97) {
+        return code -= 5 - 26
+      } else {
+        return code -= 5
+      }
+    } else {
+      if (code + 9 > 122) {
+        return code += 9 - 26
+      } else {
+        return code += 9
+      }
+    }
+  })
+  return String.fromCharCode(...newLetters)
+}
+
+const testcase = "testcase"
+vowelBack(testcase)
+
+// 18. Fizzbuzz challenge
+
+/* Write a program that prints the numbers from 1 to N-number.
+But for multiples of three print ‘Fizz’ instead of the number
+and for the multiples of five print ‘Buzz’. For numbers which
+are multiples of both three and five print ‘FizzBuzz’. */
+
+function fizzbuzz(n) {
+  let result = [];
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      result.push('FizzBuzz')
+    } else if (i % 3 === 0) {
+      result.push('Fizz')
+    } else if (i % 5 === 0) {
+      result.push('Buzz')
+    } else {
+      result.push(i)
+    }
+  }
+  return result 
+}
+
+fizzbuzz(16)
