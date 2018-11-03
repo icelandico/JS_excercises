@@ -281,3 +281,19 @@ function sortByLast(str) {
 const string = "sample partner autonomy swallow trend";
 
 sortByLast(string)
+
+// 20. Remove Surrounding Duplicate Items
+
+function uniqueInOrder(sequence) {
+  let uniques = [];
+  const seq = Array.from(sequence);
+  for (let i = 0; i < seq.length; i++) {
+    if (seq[i] !== seq[i + 1]) {
+      uniques.push(seq[i])
+    }
+  }
+  return uniques
+}
+
+const str = [1, 2, 2, 3, 3] 
+uniqueInOrder(str)
