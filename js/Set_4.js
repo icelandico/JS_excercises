@@ -262,3 +262,22 @@ function fizzbuzz(n) {
 }
 
 fizzbuzz(16)
+
+// 19. Sort a String by Its Last Character
+
+function sortByLast(str) {
+	const sortedWords = str.split(' ').map(word => word).sort((a, b) => {
+    if (a[a.length - 1] < b[b.length - 1]) {
+      return -1
+    } else if (a[a.length - 1] > b[b.length - 1]) {
+      return 1
+    } else {
+      return 0
+    }
+  })
+  return sortedWords.join(' ')
+}
+
+const string = "sample partner autonomy swallow trend";
+
+sortByLast(string)
