@@ -118,7 +118,7 @@ spinalCase('thisIsSpinalTap');
 
 function count (string) {
   let stringArray = string.split('');
-  let result = string !== '' ? Object.assign(...stringArray.map(item => ({ [item] : 0}))) : {};
+  let result = string !== '' ? Object.assign(...stringArray.map(item => ({ [item] : 0 }))) : {};
   stringArray.forEach(item => result[item] += 1)
   return result
 }
@@ -127,10 +127,17 @@ count('aaaabhyyyba')
 
 // 12. Merge arrays with consecutive indexes from both arrays
 function mergeArrays(a, b) {
-  return a.map((item, index) => [item, b[index]])
+  let mergedString = [];
+  for(var i = 0; i < a.length || i < b.length; i++) {
+    if(i < a.length)
+      mergedString.push(a[i]);
+    if(i < b.length)
+      mergedString.push(b[i]);
+   }
+ return Array.from(mergedString);
 }
 
-mergeArrays(["f", "d", "w", "t"], [5, 3, 7, 8]); // ["f", 5, "d", 3 ...]
+mergeArrays([1, 2, 3, 4, 5], ["a", "b", "c"]);
 
 // 13. Return index of value (+1) which differs from others in array (odd or even)
 function iqTest(numbers){
