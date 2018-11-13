@@ -128,7 +128,7 @@ count('aaaabhyyyba')
 // 12. Merge arrays with consecutive indexes from both arrays
 function mergeArrays(a, b) {
   let mergedString = [];
-  for(var i = 0; i < a.length || i < b.length; i++) {
+  for(let i = 0; i < a.length || i < b.length; i++) {
     if(i < a.length)
       mergedString.push(a[i]);
     if(i < b.length)
@@ -304,3 +304,23 @@ function uniqueInOrder(sequence) {
 
 const str = [1, 2, 2, 3, 3] 
 uniqueInOrder(str)
+
+//
+
+// 21. Sort array by string length
+
+function sortByLength(arr) {
+  const wordLength = arr.map(item => ({ word: item, length: item.length }));
+  const sortedWords = wordLength.sort(sorter);
+  function sorter(a, b) {
+    if (a.length < b.length) {
+      return -1
+    } else if(a.length > b.length) {
+      return 1
+    } 
+    return 0;
+  }
+  return sortedWords.map(word => word.word)
+}
+
+sortByLength(["Google", "Apple", "Microsoft"]) // ["Apple", "Google", "Microsoft"]);)
