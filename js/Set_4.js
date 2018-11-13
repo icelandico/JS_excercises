@@ -303,4 +303,22 @@ function uniqueInOrder(sequence) {
 }
 
 const str = [1, 2, 2, 3, 3] 
-uniqueInOrder(str)
+uniqueInOrder(str);
+
+// 21. Sort array by string length
+
+function sortByLength(arr) {
+  const wordLength = arr.map(item => ({ word: item, length: item.length }));
+  const sortedWords = wordLength.sort(sorter);
+  function sorter(a, b) {
+    if (a.length < b.length) {
+      return -1
+    } else if(a.length > b.length) {
+      return 1
+    } 
+    return 0;
+  }
+  return sortedWords.map(word => word.word)
+}
+
+sortByLength(["Google", "Apple", "Microsoft"])
