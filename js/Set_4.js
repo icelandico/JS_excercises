@@ -316,9 +316,9 @@ sortByLength(["Google", "Apple", "Microsoft"])
 // 22. Calculate shortest path
 
 function shortestDistance(str) {
-  const coordinates = str.split(',').map(Number)
-  const distance = Math.hypot(coordinates[2] - coordinates[0], coordinates[3] - coordinates[1]);
-  return distance % 1 === 0 ? distance : parseFloat(distance.toFixed(2))
+  const [x1, y1, x2, y2] = str.split(',').map(Number);
+  const distance = parseFloat((Math.hypot(x2 - x1, y2 - y1)).toFixed(2))
+  return distance
 }
 
-shortestDistance('66662,790481,873587,545905')
+console.log(shortestDistance('1,1,2,1'))
