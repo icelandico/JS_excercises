@@ -321,4 +321,28 @@ function shortestDistance(str) {
   return distance
 }
 
-console.log(shortestDistance('1,1,2,1'))
+shortestDistance('1,1,2,1')
+
+// 23. Create a function that, given a string with at least three characters, returns an array of its:
+// Length.
+// First character.
+// Last character.
+// Middle character, if the string has an odd number of characters. Middle TWO characters, if the string has an even number of characters.
+// Index of the second occurrence of the second character in the format "@ index #" and "not found" if the second character doesn't occur again.
+
+function allAboutStrings(str) {
+  const length = str.length;
+  const firstChar = str.charAt(0);
+  const secondChar = str.charAt(1);
+  const lastChar = str.charAt(length -1);
+  const middle = function() {
+    return length % 2 === 0 ? str.slice(length / 2 - 1, length / 2 + 1) : str[Math.floor(length / 2)]
+  }
+  const index = function() {
+    const indexOfChar = str.indexOf(secondChar, 2)
+    return indexOfChar > -1 ? `@ index ${indexOfChar}` : 'not found'
+  }
+  return [length, firstChar, lastChar, middle(), index()]
+}
+
+allAboutStrings('homework') // [8, 'h', 'k', 'ew', '@ index 5']);
