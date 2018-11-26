@@ -346,3 +346,26 @@ function allAboutStrings(str) {
 }
 
 allAboutStrings('homework') // [8, 'h', 'k', 'ew', '@ index 5']);
+
+// 24. Count letters in string and return most common characters
+
+function getWordsNums(str) {
+  const lettersCount = {}
+  str.split('').forEach(letter => {
+    if (lettersCount[letter]) {
+      lettersCount[letter] += 1
+    } else {
+      lettersCount[letter] = 1
+    }
+  })
+  const maxNum = Math.max.apply(null, Object.values(lettersCount))
+  let mostCommonLetters = [];
+  for (let letter in lettersCount) {
+    if (lettersCount[letter] === maxNum) {
+      mostCommonLetters.push(letter)
+    }
+  }
+  return mostCommonLetters
+}
+
+getWordsNums('javascript')
