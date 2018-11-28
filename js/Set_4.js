@@ -369,3 +369,18 @@ function getWordsNums(str) {
 }
 
 getWordsNums('javascript')
+
+// 25. Roman Numerals
+
+const latinNums = ['1', '2', '3', '4', '5', '9', '10', '40', '50', '100', '400', '500', '1000', '2000', '3000']
+const romanNums = ['I', 'II', 'III', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'C', 'CD', 'D', 'M', 'MM', 'MMM']
+
+function convertToRoman(num) {
+  const thousands = num / 1000 > 1 ? Math.floor(num / 1000) : null;
+  const houndreds = Math.floor((num % 1000) / 100);
+  const decimals = Math.floor((num % 100) / 10);
+  const nums = Math.floor((num % 100) / 10);
+  return [thousands, houndreds, decimals, nums]
+}
+ 
+console.log(convertToRoman(522));
