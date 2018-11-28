@@ -372,15 +372,17 @@ getWordsNums('javascript')
 
 // 25. Roman Numerals
 
-const latinNums = ['1', '2', '3', '4', '5', '9', '10', '40', '50', '100', '400', '500', '1000', '2000', '3000']
-const romanNums = ['I', 'II', 'III', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'C', 'CD', 'D', 'M', 'MM', 'MMM']
+const latinNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000]
+const romanNums = ['I', 'II', 'III', 'IV', 'V','VI', 'VII', 'VIII', 'IX', 'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC', 'C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM', 'M', 'MM', 'MMM']
 
 function convertToRoman(num) {
-  const thousands = num / 1000 > 1 ? Math.floor(num / 1000) : null;
-  const houndreds = Math.floor((num % 1000) / 100);
-  const decimals = Math.floor((num % 100) / 10);
-  const nums = Math.floor((num % 100) / 10);
-  return [thousands, houndreds, decimals, nums]
+  const thousands = Math.floor(num / 1000) * 1000;
+  const hundreds = (Math.floor((num % 1000) / 100)) * 100;
+  const decimals = (Math.floor((num % 100) / 10)) * 10;
+  const nums = num % 10;
+  const destructurizedNumber = [thousands, hundreds, decimals, nums];
+  const romanNumsArray = destructurizedNumber.map(number => romanNums[latinNums.indexOf(number)])
+  return romanNumsArray.join('')
 }
  
-console.log(convertToRoman(522));
+console.log(convertToRoman(1000));
