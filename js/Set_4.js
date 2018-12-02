@@ -385,4 +385,32 @@ function convertToRoman(num) {
   return romanNumsArray.join('')
 }
  
-console.log(convertToRoman(1000));
+convertToRoman(5000);
+
+// 26. Write a function that takes a string and calculates the number of letters and digits within it. Return the result as an object.
+
+function countAll(str) {
+  const numbers = /\d/g
+  const letters = /[a-zA-Z]/g
+  const numbersCount = (str.match(numbers) || []).length
+  const lettersCount = (str.match(letters) || []).length
+  const result = Object.assign({}, { "LETTERS": lettersCount, "DIGITS": numbersCount})
+  return result
+}
+
+countAll('Hello') //countAll("Hello World") ➞ {"LETTERS":  10, "DIGITS": 0}
+
+// 27. Separate number with tousands
+
+  function formatNum(num) {
+    const number = num.toString(10).split('');
+    for (let i = number.length - 3; i > 0; i -= 3) {
+      number.splice(i, 0, '-')
+      }
+    return number.join('')
+    }
+  
+  formatNum("100000");
+
+
+
