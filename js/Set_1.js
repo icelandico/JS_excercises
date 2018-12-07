@@ -96,12 +96,10 @@ mutation(["hello", "hey"]);
 // 8. Remove all falsy values from an array
 
 function bouncer(arr) {
-  let result = arr.filter(function (val) {
-    return Boolean(val) === true;
-  });
+  return arr.filter(val => Boolean(val))
 }
 
-bouncer([7, "ate", "", false, 9]);
+console.log(bouncer([7, "ate", "", false, 9, 0, 1, undefined]));
 
 // 9. Uncipher the text! Using ROT13 cipher code
 
