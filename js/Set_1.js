@@ -99,7 +99,7 @@ function bouncer(arr) {
   return arr.filter(val => Boolean(val))
 }
 
-console.log(bouncer([7, "ate", "", false, 9, 0, 1, undefined]));
+bouncer([7, "ate", "", false, 9, 0, 1, undefined]);
 
 // 9. Uncipher the text! Using ROT13 cipher code
 
@@ -195,6 +195,7 @@ foldTo(384000000);
 // contains an uppercase letter
 // contains a number
 // Valid passwords will only be alphanumeric characters.
+// At least 6 characters
 
 function validate(password) {
   return (/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])[A-Za-z0-9]{6,}$/.test(password));
@@ -224,12 +225,10 @@ function array_diff(a, b) {
 Shorthand:
 
   function array_diff(a, b) {
-    return (a.filter(function (x) {
-      return b.indexOf(x) == -1;
-    }));
+    return (a.filter(element => b.indexOf(element) === -1));
   }
 
-array_diff([1, 2, 2], []);
+array_diff([1, 2, 2, 3], [1,3]);
 
 // 16. Given an array of numbers (a list in groovy), determine whether the sum of all of the numbers is odd or even.
 
