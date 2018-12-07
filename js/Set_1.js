@@ -234,14 +234,8 @@ array_diff([1, 2, 2, 3], [1,3]);
 
 function oddOrEven(array) {
   let x = 0;
-  for (let i = 0; i < array.length; i++) {
-    x += array[i];
-  }
-  if (x % 2 === 0) {
-    return 'even'
-  } else {
-    return 'odd'
-  }
+  array.forEach(num => num += x)
+  return x % 2 === 0 ? 'even' : 'odd';
 }
 
 // Using reduce();
@@ -251,7 +245,7 @@ function oddsOrEvens(x) {
   return sum % 2 === 0 ? 'even' : 'odd';
 }
 
-oddsOrEvens([1, 2, 3, 98]);
+console.log(oddsOrEvens([1, 2, 4, 88]));
 
 // 17. Given two speeds v1 (A's speed, integer > 0) and v2 (B's speed, integer > 0) and a lead g (integer > 0) how long
 //    will it take B to catch A? The result will be an array [hour, min, sec] which is the time needed in hours,
