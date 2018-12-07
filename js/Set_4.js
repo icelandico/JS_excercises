@@ -427,6 +427,13 @@ countAll('Hello') //countAll("Hello World") ➞ {"LETTERS":  10, "DIGITS": 0}
 
   orderList(list) // 'Vatsan took his dog for a spin'
 
+  // 29. Remake Math.hypot() without using it
+  const hypot = vector => {
+    return Math.sqrt(vector.map(num => Math.pow(num, 2)).reduce((a, b) => a + b, 0))
+  }
+
+  hypot([3,4])
+
 
 
 
