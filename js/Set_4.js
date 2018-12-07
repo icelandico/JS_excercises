@@ -412,5 +412,22 @@ countAll('Hello') //countAll("Hello World") ➞ {"LETTERS":  10, "DIGITS": 0}
   
   formatNum("100000");
 
+  // 28. Return the values as a string-seperated sentence in the order of their keys' integer equivalent (increasing order).
+
+  const list = [
+    {'4': 'dog' }, {'2': 'took'}, {'3': 'his'},
+    {'-2': 'Vatsan'}, {'5': 'for'}, {'6': 'a'}, {'12': 'spin'}
+   ]
+
+   function orderList(list) {
+    const keys = list.map(item => [Object.keys(item), Object.values(item)]);
+    const sortedArray = keys.sort((prev, next) => prev[0] - next[0]);
+    return sortedArray.map(word => word[1]).join(' ')
+   }
+
+  orderList(list) // 'Vatsan took his dog for a spin'
+
+
+
 
 
