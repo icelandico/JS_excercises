@@ -209,7 +209,7 @@ function findOdd(collection) {
 findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5])
 
 const arra = [1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5];
-console.log(findOdd(arra))// [1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5] ➞ -1
+findOdd(arra)// [1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5] ➞ -1
 
 // 15. Basic email validation
 

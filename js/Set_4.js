@@ -434,5 +434,13 @@ countAll('Hello') //countAll("Hello World") ➞ {"LETTERS":  10, "DIGITS": 0}
 
   hypot([3,4])
 
- 
+
+  // 30. Show number of letters that occurs more than once in string
+  function duplicateCount(str) {
+    const string = str.split('').sort()
+    const regex = /(.)\1+/g
+    return (string.join('').match(regex) || []).length
+  }
+
+ duplicateCount('aabcbce')
 
