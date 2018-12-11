@@ -193,12 +193,23 @@ function updateRecords(id, prop, value) {
 
 updateRecords(5439, "album", "New album Title");
 
-// 14. Given an array, find the int that appears an odd number of times.
+//14. Given an array, find the int that appears an odd number of times.
 
-// function findOdd(A) {
-//     //happy coding!
-//     return 0;
-// }
+function findOdd(collection) {
+  const numsSet = Array.from(new Set(collection))
+  const objectCounter = Object.assign({}, ...numsSet.map((item, index) => ({ [numsSet[index]] : 0})))
+  collection.forEach(number => objectCounter[number] += 1)
+  for (item in objectCounter) {
+    if(objectCounter[item] % 2 === 1) {
+      return item
+    }
+  }
+}
+
+findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5])
+
+const arra = [1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5];
+console.log(findOdd(arra))// [1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5] ➞ -1
 
 // 15. Basic email validation
 

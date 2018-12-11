@@ -434,7 +434,5 @@ countAll('Hello') //countAll("Hello World") ➞ {"LETTERS":  10, "DIGITS": 0}
 
   hypot([3,4])
 
-
-
-
+ 
 
