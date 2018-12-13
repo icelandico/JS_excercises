@@ -444,3 +444,19 @@ countAll('Hello') //countAll("Hello World") ➞ {"LETTERS":  10, "DIGITS": 0}
 
  duplicateCount('aabcbce')
 
+ // 31. Convert "Zero" and "One" Text to '1' and '0'
+
+ function textToNumberBinary(str) {
+  const numberText = str.split(' ').map(item => item.toLowerCase());
+  const toNumber = numberText
+                   .filter(num => num === 'one' || num === 'zero')
+                   .map(num => num === 'one' ? 1 : 0)
+  const modulo = toNumber.length % 8
+  return modulo < toNumber.length ? toNumber.slice(0, toNumber.length - modulo).join('') : ''
+}
+
+const text = 'one zero zero one zero ten one one one one two'
+textToNumberBinary(text)
+
+
+
