@@ -177,6 +177,18 @@ function findMissingLetter(array) {
   return desiredLetters.filter(item => array.indexOf(item) === -1).join('')
 }
 
+// Second take - find missing one
+function missingLetter(arr) {
+  const charCodes =  arr.map(letter => letter.charCodeAt())
+  let missingLetter = ''
+  for (let i = 0; i < charCodes.length; i++) {
+    if (charCodes[i] - charCodes[i - 1] !== 1) {
+      missingLetter = charCodes[i - 1] + 1
+    }
+  }
+  return String.fromCharCode(missingLetter)
+}
+
 findMissingLetter(['O','Q','R','S'])
 
 // 16. Deep comparison of objects 
@@ -457,6 +469,3 @@ countAll('Hello') //countAll("Hello World") ➞ {"LETTERS":  10, "DIGITS": 0}
 
 const text = 'one zero zero one zero ten one one one one two'
 textToNumberBinary(text)
-
-
-
