@@ -469,3 +469,17 @@ countAll('Hello') //countAll("Hello World") ➞ {"LETTERS":  10, "DIGITS": 0}
 
 const text = 'one zero zero one zero ten one one one one two'
 textToNumberBinary(text)
+
+// 32. Truncate String at a Given Length. Return full words only.
+function truncate(string, length) {
+  const words = string.split(' ')
+  const lengths = words
+                  .map(word => word.length + 1)
+                  .reduce((a, x, i) => [...a, x + (a[i - 1]|| 0)], []);
+  const lastToReturn = lengths.filter(word => word <= length + 1);
+  return words.slice(0, lastToReturn.length).join(' ')
+}
+
+const expression = "Lorem ipsum dolor sit amet." 
+
+truncate(expression, 11)
