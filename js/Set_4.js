@@ -483,3 +483,19 @@ function truncate(string, length) {
 const expression = "Lorem ipsum dolor sit amet." 
 
 truncate(expression, 11)
+
+// 33. Delete digit from number and find the max number
+
+function deleteDigit(n) {
+  const stringNum = n.toString().split('');
+  const numbers = [];
+  stringNum.map((elem, index) => {
+    const strings = [...stringNum];
+    strings.splice(index, 1);
+    numbers.push(strings.join(''));
+  })
+  return Math.max(...numbers)
+}
+
+deleteDigit(152);
+
