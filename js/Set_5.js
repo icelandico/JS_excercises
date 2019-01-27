@@ -10,3 +10,48 @@ const uniqueInOrder = function (iterable) {
 }
 
 uniqueInOrder('AAAABBBCCDAABBB')
+
+// 2. Convert time to readable format
+
+function humanReadable(seconds) {
+  const hours = Math.floor(seconds / 3600)
+  const minutes = Math.floor(((seconds / 3600) % 1) * 60);
+  const secs =  Math.round(((((seconds / 3600) % 1) * 60) % 1) * 60)
+  const readable = [hours, minutes, secs]
+  const result = readable.map(time => time < 10 ? '0' + time : time)
+  return result.join(':')
+}
+
+humanReadable(86399);
+
+// 3. Find the sum of all the multiples of 3 or 5 below the provided parameter value number.
+
+function multiplesOf3and5(number) {
+  const dividers = [];
+  for (let i = 0; i < number; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      dividers.push(i)
+    }
+  }
+  const sum = dividers.reduce((prev, next) => prev + next, 0);
+  return sum
+}
+
+multiplesOf3and5(1000); // 233168
+
+// 4. Sum of even Fibonacci numbers
+
+function fiboEvenSum(n) {
+  let numbers = [1, 2];
+  for (let i = 2; i <= n; i++) {
+    numbers.push(numbers[i-1] + numbers[i-2])
+  }
+  return numbers.filter(num => num % 2 === 0).reduce((prev, next) => prev + next, 0)
+}
+
+fiboEvenSum(10);
+
+
+
+
+
