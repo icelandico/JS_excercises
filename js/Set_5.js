@@ -67,19 +67,36 @@ function getStudentsWithNamesAndTopNotes(students) {
 const students = [
   { 
     name: 'John',
-    notes: [3, 5, 4]
+    notes: [-5, 5, 3, -1, 6, 2]
   },
   {
     name: 'Andy',
-    notes: [1, 2, 2]
+    notes: [3, -2, 5, 0, -3]
   },
   {
     name: 'Jack',
-    notes: [4, 4, 3]
+    notes: [4, 6, 3, 1, 5, -10]
   }
 ]
 
 getStudentsWithNamesAndTopNotes(students)
+
+// 6. Create a function that takes an array of students and returns an object
+// representing their notes distribution. Have in mind that all invalid notes
+// should not be count in the distribution. Valid notes are: 1, 2, 3, 4, 5
+
+function getNotesDistribution(students) {
+  const validNotes = [1, 2, 3, 4, 5]
+  const counter = {}
+  const filteredNotes = students.map(student => ({
+    name: student.name,
+    notes: student.notes.filter(note => validNotes.includes(note))
+  }))
+  filteredNotes.forEach(item => item.notes.forEach(note => counter[note] ? counter[note] += 1 : counter[note] = 1))
+  return counter
+}
+
+getNotesDistribution(students)
 
 
 
