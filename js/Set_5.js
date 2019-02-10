@@ -51,6 +51,36 @@ function fiboEvenSum(n) {
 
 fiboEvenSum(10);
 
+// 5. Create a function that takes an array of objects like { name: 'John', notes: [3, 5, 4]} 
+// and returns an array of objects like { name: 'John', topNote: 5 }.
+// If student has no notes(an empty array) then let's assume topNote: 0
+
+function getStudentsWithNamesAndTopNotes(students) {
+  const topNotesArr = students.map(student => (
+    { 
+      name: student.name,
+      topNote: Math.max(...student.notes, 0) 
+    }))
+  return topNotesArr
+}
+
+const students = [
+  { 
+    name: 'John',
+    notes: [3, 5, 4]
+  },
+  {
+    name: 'Andy',
+    notes: [1, 2, 2]
+  },
+  {
+    name: 'Jack',
+    notes: [4, 4, 3]
+  }
+]
+
+getStudentsWithNamesAndTopNotes(students)
+
 
 
 
