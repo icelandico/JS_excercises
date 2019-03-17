@@ -98,7 +98,7 @@ function getNotesDistribution(students) {
 
 getNotesDistribution(students)
 
-// Write a function that takes a negative or positive integer, which represents the number of minutes
+// 7. Write a function that takes a negative or positive integer, which represents the number of minutes
 // before (-) or after (+) Sunday midnight, and returns the current day of the week and the current time in 24hr format ('hh:mm') as a string.
 
 function partiallyHide(phrase) {
@@ -110,3 +110,15 @@ function partiallyHide(phrase) {
 
 const strg = "skies were pretty"
 partiallyHide(strg)
+
+// 8. Create a function that takes an integer and returns an array from 1 to the given number, where:
+// If the number can be divided evenly by 4, amplify it by 10(i.e.return 10 times the number).
+// If the number cannot be divided evenly by 4, simply return the number.
+
+function amplify(num) {
+  const numArray = Array.from(new Array(num), (x, i) => i + 1)
+  const mapped = numArray.map(number => number % 4 === 0 ? number * 10 : number)
+  return mapped
+}
+
+console.log(amplify(10))
