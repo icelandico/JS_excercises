@@ -131,3 +131,17 @@ function dictionary(initial_word, words) {
 }
 
 dictionary("tri", ["triplet", "tries", "trip", "piano", "tree"])
+
+// 10. Write a program that will calculate the number of trailing
+// zeros in a factorial of a given number.
+
+function zeros(n) {
+  let counter = 0
+  for (i = 5; (n / i) >= 1; i = i * 5) {
+    counter += n / i
+  }
+  return Math.floor(counter)
+}
+
+console.log(zeros(217883360))
+
