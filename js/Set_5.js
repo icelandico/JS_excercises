@@ -98,7 +98,15 @@ function getNotesDistribution(students) {
 
 getNotesDistribution(students)
 
+// Write a function that takes a negative or positive integer, which represents the number of minutes
+// before (-) or after (+) Sunday midnight, and returns the current day of the week and the current time in 24hr format ('hh:mm') as a string.
+
+function partiallyHide(phrase) {
+  const words = phrase.split(" ")
+  const coded = words.map(word => word[0] + "-".repeat(word.length - 2) + word[word.length - 1])
+  return coded.join(" ")
+}
 
 
-
-
+const strg = "skies were pretty"
+partiallyHide(strg)
