@@ -121,4 +121,13 @@ function amplify(num) {
   return mapped
 }
 
-console.log(amplify(10))
+amplify(10)
+
+// 9. Create a function that takes in an initial word and filters out an array to contain words
+// that start with the same letters as the initial word.
+
+function dictionary(initial_word, words) {
+  return words.filter(word => word.startsWith(initial_word) ? word : null)
+}
+
+dictionary("tri", ["triplet", "tries", "trip", "piano", "tree"])
