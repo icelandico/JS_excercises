@@ -152,14 +152,15 @@ zeros(217883360)
 // Keepin' it simple: There are no special characters in input.
 
 const word = "A wise old owl lived in an oak"
+
 const encryptThis = function (text) {
   const words = text.split(" ")
   const encrypted = words.map(w => {
     if (w.length > 2) {
-    const firstLetter = w.charCodeAt(0)
-    const secondLetter = w[1]
-    const lastLetter = w[w.length - 1]
-    return firstLetter + lastLetter + w.substring(2, w.length - 1) + secondLetter
+      const firstLetter = w.charCodeAt(0)
+      const secondLetter = w[1]
+      const lastLetter = w[w.length - 1]
+      return firstLetter + lastLetter + w.substring(2, w.length - 1) + secondLetter
     }
     else if (w.length == 2) {
       const firstLetter = w.charCodeAt(0)
@@ -176,3 +177,22 @@ const encryptThis = function (text) {
 // Very dirty solution, first take
 
 encryptThis(word)
+
+// 12. Nth Smallest Element
+
+function nthSmallest(arr, n) {
+  const sortedArray = arr.sort((a, b) => a - b)
+  return sortedArray[n - 1]
+}
+
+nthSmallest([7, 3, 5, 1], 2)
+
+// 13. Given a word, write a function that returns the first index and the last index of a character.
+
+function charIndex(word, char) {
+  const firstIndex = word.indexOf(char)
+  const lastIndex = word.lastIndexOf(char)
+  return firstIndex < 0 ? undefined : [firstIndex, lastIndex]
+}
+
+charIndex("happy", "e")
