@@ -198,14 +198,26 @@ function charIndex(word, char) {
 charIndex("happy", "e")
 
 
-// 14. Create a function that determines whether or not it's possible to split a pie fairly given these three parameters:
-// Total number of slices.
-// Number of recipients.
-// How many slices each person gets.
+// 14. Extract parameters index
 
 const firstArg = (...args) => args[0]
 
 const lastArg = (...args) => args[args.length - 1]
 
-console.log(firstArg(1, 2, 3))
-console.log(lastArg(1, 2, 3, 4))
+firstArg(1, 2, 3)
+lastArg(1, 2, 3, 4)
+
+// 15. Given your friend's unfortunate taste preferences,
+// you decide to split the bill only for non-spicy items. You will pay in full for the spicy dishes.
+
+function billSplit(spicy, cost) {
+  const myBill = spicy
+    .map((d, i) => (d === "N" ? cost[i] / 2 : cost[i]))
+    .reduce((a, b) => a + b)
+  const hisBill = spicy
+    .map((d, i) => (d === "N" ? cost[i] / 2 : 0))
+    .reduce((a, b) => a + b)
+  return [myBill, hisBill]
+}
+
+billSplit(["N", "N", "N", "S"], [40, 20, 20, 10])
