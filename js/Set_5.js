@@ -221,3 +221,13 @@ function billSplit(spicy, cost) {
 }
 
 billSplit(["N", "N", "N", "S"], [40, 20, 20, 10])
+
+// 16. Create a function that filters out an array to include numbers who only have a certain number of digits.
+
+function filterDigitLength(arr, num) {
+  const stringNumbers = arr.map(num => num.toString())
+  return stringNumbers.filter(n => n.length === num).map(Number)
+}
+
+filterDigitLength([88, 232, 4, 9721, 555], 3)
+
