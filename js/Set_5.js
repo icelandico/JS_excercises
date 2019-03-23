@@ -231,3 +231,17 @@ function filterDigitLength(arr, num) {
 
 filterDigitLength([88, 232, 4, 9721, 555], 3)
 
+// 17. Write a function that reorders the digits in an array based on ascending (asc) or descending (desc) order.
+
+function reorderDigits(arr, direction) {
+  const strNums = arr.map(n => n.toString())
+  if (direction === "asc") {
+    const ascending = strNums.map(n => n.split("").sort((a, b) => a - b).join(""))
+    return ascending.map(Number)
+  } else {
+    const descending = strNums.map(n => n.split("").sort((a, b) => a - b).join(""))
+    return descending.map(Number)
+  }
+}
+
+console.log(reorderDigits([515, 341, 98, 44, 211], "asc"))
