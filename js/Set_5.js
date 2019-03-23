@@ -143,5 +143,36 @@ function zeros(n) {
   return Math.floor(counter)
 }
 
-console.log(zeros(217883360))
+zeros(217883360)
 
+// 11. Your message is a string containing space separated words.
+// You need to encrypt each word in the message using the following rules:
+// The first letter needs to be converted to its ASCII code.
+// The second letter needs to be switched with the last letter
+// Keepin' it simple: There are no special characters in input.
+
+const word = "A wise old owl lived in an oak"
+const encryptThis = function (text) {
+  const words = text.split(" ")
+  const encrypted = words.map(w => {
+    if (w.length > 2) {
+    const firstLetter = w.charCodeAt(0)
+    const secondLetter = w[1]
+    const lastLetter = w[w.length - 1]
+    return firstLetter + lastLetter + w.substring(2, w.length - 1) + secondLetter
+    }
+    else if (w.length == 2) {
+      const firstLetter = w.charCodeAt(0)
+      const lastLetter = w[1]
+      return firstLetter + lastLetter
+    }
+    else {
+      return w.charCodeAt(0)
+    }
+  })
+  return encrypted.join(" ")
+}
+
+// Very dirty solution, first take
+
+encryptThis(word)
