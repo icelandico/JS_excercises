@@ -244,4 +244,4 @@ function reorderDigits(arr, direction) {
   }
 }
 
-console.log(reorderDigits([515, 341, 98, 44, 211], "asc"))
+reorderDigits([515, 341, 98, 44, 211], "asc")
