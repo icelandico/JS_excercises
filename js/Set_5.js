@@ -196,3 +196,16 @@ function charIndex(word, char) {
 }
 
 charIndex("happy", "e")
+
+
+// 14. Create a function that determines whether or not it's possible to split a pie fairly given these three parameters:
+// Total number of slices.
+// Number of recipients.
+// How many slices each person gets.
+
+const firstArg = (...args) => args[0]
+
+const lastArg = (...args) => args[args.length - 1]
+
+console.log(firstArg(1, 2, 3))
+console.log(lastArg(1, 2, 3, 4))
