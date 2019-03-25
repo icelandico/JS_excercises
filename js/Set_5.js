@@ -239,9 +239,22 @@ function reorderDigits(arr, direction) {
     const ascending = strNums.map(n => n.split("").sort((a, b) => a - b).join(""))
     return ascending.map(Number)
   } else {
-    const descending = strNums.map(n => n.split("").sort((a, b) => a - b).join(""))
+    const descending = strNums.map(n => n.split("").sort((a, b) => b - a).join(""))
     return descending.map(Number)
   }
 }
 
 reorderDigits([515, 341, 98, 44, 211], "asc")
+
+// Create a function that takes in an array of miles run every
+// day and returns total number of progress values. i.e. 3 -> 4 is progress.
+
+function progressDays(runs) {
+  let progress = 0
+  runs.forEach((num, i) => num < runs[i+1] ? progress++ : null)
+  return progress
+}
+
+const days = [3, 4, 1, 2]
+
+progressDays(days)
