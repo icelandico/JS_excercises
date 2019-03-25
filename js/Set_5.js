@@ -246,7 +246,7 @@ function reorderDigits(arr, direction) {
 
 reorderDigits([515, 341, 98, 44, 211], "asc")
 
-// Create a function that takes in an array of miles run every
+// 18. Create a function that takes in an array of miles run every
 // day and returns total number of progress values. i.e. 3 -> 4 is progress.
 
 function progressDays(runs) {
@@ -258,3 +258,18 @@ function progressDays(runs) {
 const days = [3, 4, 1, 2]
 
 progressDays(days)
+
+// 19. Write a function that takes in a two-dimensional array and returns the number of sub-arrays with identical elements.
+
+function countIdentical(arr) {
+  const identical = (arr) => {
+    const filtered = Array.from(new Set(arr))
+    return arr.length > 1 ? filtered.length < 2 : true
+  }
+  const result = arr.filter(a => identical(a) ? a : null)
+  return result.length
+}
+
+const subs = [[33, 33], [5], ["a", "a"], [2, 2, 2], [1, 2, 2], [3, 1]]
+
+countIdentical(subs)
