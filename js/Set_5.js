@@ -276,21 +276,34 @@ countIdentical(subs)
 
 // 20. Grab the city name which is inside the brackets
 
-// function grabCity(str) {
-//   const cityRegexp = /\[(.*?)\]/g
-//   let matched = cityRegexp.exec(str)
-//   let matches = []
-//   matches.push(matched[1])
-//   while (matched = cityRegexp.exec(str)) {
-//     matches.push(matched[1])
-//   }
-//   return matches[matches.length - 1]
-// }
+function grabCity(str) {
+  const cityRegexp = /\[(.*?)\]/g
+  let matched = cityRegexp.exec(str)
+  let matches = []
+  matches.push(matched[1])
+  while (matched = cityRegexp.exec(str)) {
+    matches.push(matched[1])
+  }
+  return matches[matches.length - 1]
+}
+
+
+// shorter version
 
 function grabCity(str) {
   const string = str.split("[").pop()
   return string.slice(0, string.length - 1)
 }
 
-console.log(grabCity("[50% Off!][Group Tours Included] 5-Day Trip to Onsen [Kyoto]"))
+grabCity("[50% Off!][Group Tours Included] 5-Day Trip to Onsen [Kyoto]")
+
+// 21. Function that creates the comparison of sum of two sets of nested arrays with numbers
+
+function testFairness(agatha, bertha) {
+  const sum_a = agatha.map(el => el.reduce((a, b) => a * b)).reduce((c, d) => c + d, 0)
+  const sum_b = bertha.map(el => el.reduce((a, b) => a * b)).reduce((c, d) => c + d, 0)
+  return [sum_a, sum_b]
+}
+
+console.log(testFairness([[2, 2], [2, 2], [2, 2], [2, 2]], [[4, 4]]))
 
