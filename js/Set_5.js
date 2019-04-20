@@ -305,5 +305,5 @@ function testFairness(agatha, bertha) {
   return [sum_a, sum_b]
 }
 
-console.log(testFairness([[2, 2], [2, 2], [2, 2], [2, 2]], [[4, 4]]))
+testFairness([[2, 2], [2, 2], [2, 2], [2, 2]], [[4, 4]])
 
