@@ -273,3 +273,19 @@ function countIdentical(arr) {
 const subs = [[33, 33], [5], ["a", "a"], [2, 2, 2], [1, 2, 2], [3, 1]]
 
 countIdentical(subs)
+
+// 20. Grab the city name which is inside the brackets
+
+function grabCity(str) {
+  const cityRegexp = /\[(.*?)\]/g
+  let matched = cityRegexp.exec(str)
+  let matches = []
+  matches.push(matched[1])
+  while (matched = cityRegexp.exec(str)) {
+    matches.push(matched[1])
+  }
+  return matches[matches.length - 1]
+}
+
+grabCity("Cheese Factory Tour [Portland]")
+
