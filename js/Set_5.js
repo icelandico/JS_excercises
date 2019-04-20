@@ -276,16 +276,21 @@ countIdentical(subs)
 
 // 20. Grab the city name which is inside the brackets
 
+// function grabCity(str) {
+//   const cityRegexp = /\[(.*?)\]/g
+//   let matched = cityRegexp.exec(str)
+//   let matches = []
+//   matches.push(matched[1])
+//   while (matched = cityRegexp.exec(str)) {
+//     matches.push(matched[1])
+//   }
+//   return matches[matches.length - 1]
+// }
+
 function grabCity(str) {
-  const cityRegexp = /\[(.*?)\]/g
-  let matched = cityRegexp.exec(str)
-  let matches = []
-  matches.push(matched[1])
-  while (matched = cityRegexp.exec(str)) {
-    matches.push(matched[1])
-  }
-  return matches[matches.length - 1]
+  const string = str.split("[").pop()
+  return string.slice(0, string.length - 1)
 }
 
-grabCity("Cheese Factory Tour [Portland]")
+console.log(grabCity("[50% Off!][Group Tours Included] 5-Day Trip to Onsen [Kyoto]"))
 
