@@ -351,7 +351,6 @@ function alphabetized(s) {
   const regex = /[a-zA-Z]/g
   if (s.match(regex)) {
     const letters = s.match(regex).map((l, i) => ({ letter: l, upper: l.toUpperCase().charCodeAt(), index: i }))
-    console.log(s.match(regex))
     const sorted = letters.sort((a, b) => b.upper < a.upper ? 1 : b.upper === a.upper ? b.index > a.index ? -1 : 1 : -1)
     return sorted.map(el => el.letter).join("")
   } else {
@@ -360,3 +359,13 @@ function alphabetized(s) {
 }
 
 alphabetized("The Holy Bible")
+
+function puzzlePieces(a1, a2) {
+  if (a1.length === a2.length) {
+  const sumArray = a1.map((elem, idx) => elem + a2[idx])
+  return Array.from(new Set(sumArray)).length === 1
+  }
+  return false
+}
+
+puzzlePieces([1, 2, 3, 4], [4, 3, 2, 1])
