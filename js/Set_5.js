@@ -360,7 +360,7 @@ function alphabetized(s) {
 
 alphabetized("The Holy Bible")
 
-// Check if elements from two arrays gives same result for all array elements. If two arrays have different length
+// 24. Check if elements from two arrays gives same result for all array elements. If two arrays have different length
 // return false
 
 function puzzlePieces(a1, a2) {
@@ -373,7 +373,7 @@ function puzzlePieces(a1, a2) {
 
 puzzlePieces([1, 2, 3, 4], [4, 3, 2, 1])
 
-// Given two integers a and b, return how many times a can be halved while still being greater than b.
+// 25. Given two integers a and b, return how many times a can be halved while still being greater than b.
 
 function halveCount(a, b) {
   let counter = 0
@@ -385,3 +385,15 @@ function halveCount(a, b) {
 }
 
 halveCount(1324, 98)
+
+// 26. Sort names by length. If length of names is equal, sort it in reverse alphabetical order (Z->A)
+
+const names = 'Tsuyoshi Michio Tadao Shin Takehiko Toshi Yemon Satoshi Takayuki Yori Yoshi Yoshihiro Shichiro Takeshi Nobuo Shigeo Yoshinori Seiichi Toshihiro Naoki Shuichi Yoshiaki Yoshio Yasuo Yoshimitsu Tatsuya Ryozo Rokuro Mitsuo Tsutomu Samuru Mikio Takao Toshiaki Teruo Ryota Yoshikazu Miki Shigeru Naoko Mitsuru Ryuu Toyo Ronin Yogi Ryuichi Satoru Yuji Nobu Minoru Shoichi Tama Tadashi Ringo Shima Shunichi Nobuyuki Shoji Uyeda'
+
+function lineupStudents(students) {
+  const sorted = students.split(" ")
+  sorted.sort((a, b) => a.length === b.length ? a > b ? -1 : 1 : b.length - a.length)
+  return sorted
+}
+
+lineupStudents(names)
