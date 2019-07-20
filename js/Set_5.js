@@ -388,12 +388,41 @@ halveCount(1324, 98)
 
 // 26. Sort names by length. If length of names is equal, sort it in reverse alphabetical order (Z->A)
 
-const names = 'Tsuyoshi Michio Tadao Shin Takehiko Toshi Yemon Satoshi Takayuki Yori Yoshi Yoshihiro Shichiro Takeshi Nobuo Shigeo Yoshinori Seiichi Toshihiro Naoki Shuichi Yoshiaki Yoshio Yasuo Yoshimitsu Tatsuya Ryozo Rokuro Mitsuo Tsutomu Samuru Mikio Takao Toshiaki Teruo Ryota Yoshikazu Miki Shigeru Naoko Mitsuru Ryuu Toyo Ronin Yogi Ryuichi Satoru Yuji Nobu Minoru Shoichi Tama Tadashi Ringo Shima Shunichi Nobuyuki Shoji Uyeda'
+const names = `
+  Rokuro Shoji Yoshiaki Tsuneo Yuji Naoki Mikio Tsuyoshi Tadashi Yasuo Ryuu Rafu Tsutomu
+  Shinichi Yuki Yuichi Naoko Tamotsu Teruo Shiro Takeo Senichi Tetsuya Toru Yoshihiro Yoichi
+  Shuichi Shig Nori Tomio Takahiro Shoichi Yasushi Takashi Toyo Nobuyuki Toshiyuki Tomi Yoshiro Michio
+   `
 
 function lineupStudents(students) {
-  const sorted = students.split(" ")
-  sorted.sort((a, b) => a.length === b.length ? a > b ? -1 : 1 : b.length - a.length)
-  return sorted
+  const studentsArray = students.trim().split(" ")
+  studentsArray.sort((a, b) => a.length === b.length ? a > b ? -1 : 1 : b.length - a.length)
+  return studentsArray
 }
 
 lineupStudents(names)
+
+// 27. Count items, put them into arrays in format [number, item]. Disregard items that are not in "veggies" array
+
+const veggies = ["cabbage", "carrot", "celery", "cucumber", "mushroom", "onion", "pepper", "potato", "tofu", "turnip"]
+
+const items = `mushroom chopsticks chopsticks turnip mushroom carrot mushroom cabbage mushroom carrot tofu pepper cabbage potato cucumber 
+ mushroom mushroom mushroom potato turnip chopsticks cabbage celery celery turnip pepper chopsticks potato potato onion cabbage cucumber 
+ onion pepper onion cabbage potato tofu carrot cabbage cabbage turnip mushroom cabbage cabbage cucumber cabbage chopsticks turnip pepper 
+ onion pepper onion mushroom turnip carrot carrot tofu onion tofu chopsticks chopsticks chopsticks mushroom cucumber chopsticks carrot 
+ potato cabbage cabbage carrot mushroom chopsticks mushroom celery turnip onion carrot turnip cucumber carrot potato mushroom turnip 
+ mushroom cabbage tofu turnip turnip turnip mushroom tofu potato pepper turnip potato turnip celery carrot turnip`
+
+function countVegetables(string) {
+  const itemsArray = Array.from(new Set(string.trim().split(" "))).filter(el => veggies.includes(el)).map(el => [0, el])
+  const originalArray = string.split(" ")
+  for (let i = 0; i < originalArray.length; i++) {
+    for (let k = 0; k < itemsArray.length; k++) {
+      originalArray[i] === itemsArray[k][1] ? itemsArray[k][0] += 1 : 0
+      }
+    }
+  itemsArray.sort((a, b) => a[0] === b[0] ? a[1] > b[1] ? -1 : 1 : b[0] - a[0])
+  return itemsArray
+}
+
+countVegetables(items)
