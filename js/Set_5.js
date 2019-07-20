@@ -332,7 +332,7 @@ testFairness([[2, 2], [2, 2], [2, 2], [2, 2]], [[4, 4]])
 
 function evenOddTransform(arr, n) {
   let count = 0
-  let newArray = arr
+  let newArray = [...arr]
   while (count < n) {
     newArray = newArray.map(elem => elem % 2 === 0 ? elem - 2 : elem + 2)
     count += 1
@@ -426,3 +426,28 @@ function countVegetables(string) {
 }
 
 countVegetables(items)
+
+// 28. Sort through the items in the box finding the coins and putting aside anything else. 
+// "mon" value is 1, "monme" value is 60
+// Determine the minimum number of coins to pay for tofu. You must pay with exact change and if you do not have the correct change return “leaving the market”.
+// If the cost of tofu is higher than your total amount of money also return “leaving the market”.
+
+const coinBox = `monme mon mon monme`
+
+function buyTofu(cost, box) {
+  const coinsArray = box.split(" ")
+  const monCount = coinsArray.filter(coin => coin === "mon").length
+  const monMeCount = coinsArray.filter(coin => coin === "monme").length
+  const coinsSum = monCount * 1 + monMeCount * 60
+  const coinsMonMeNumber = Math.floor(cost / 60) <= monMeCount ? Math.floor(cost / 60) : Math.floor(cost / 60) - monMeCount
+  const coinsMonNumber = (cost - coinsMonMeNumber * 60)
+  const coinsOverall = coinsMonMeNumber + coinsMonNumber
+  if (coinsMonMeNumber > monMeCount || coinsMonNumber > monCount) {
+    return "leaving the market"
+  } else if (coinsSum < cost) {
+    return "leaving the market"
+  }
+  return [monCount, monMeCount, coinsSum, coinsOverall]
+}
+
+buyTofu(122, coinBox)
