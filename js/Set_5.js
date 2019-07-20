@@ -451,3 +451,15 @@ function buyTofu(cost, box) {
 }
 
 buyTofu(122, coinBox)
+
+// 29. Find the position of second occurence of "zip" in string
+
+const str = `Zip is a file format used for data compression and archiving. A zip file contains one or more files that have been compressed, to reduce file size, or stored as is. The zip file format permits a number of compression algorithms.`
+
+function findZip(str) {
+  const zipWord = /\b\w*zip\w*\b/gi
+  const matchedZip = str.match(zipWord)
+  return str.lastIndexOf(matchedZip[matchedZip.length - 1])
+}
+
+console.log(findZip(str))
