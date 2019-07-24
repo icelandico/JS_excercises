@@ -504,3 +504,26 @@ function anagrams(word, words) {
 }
 
 anagrams("abba", ["aabb", "abcd", "bbaa", "dada"])
+
+// 31. Convert RGB to HEX value The valid decimal values for RGB are 0 - 255.
+//  Any (r,g,b) argument values that fall out of that range should be rounded to the closest valid value.
+
+function rgb(r, g, b){
+  const formatRgb = [...arguments].map(val => {
+    if (val > 255) {
+      return 255
+    } else if (val < 0) {
+      return 0
+    } else if (!(parseInt(val) === val)) {
+      return parseInt(val)
+    } 
+    return val
+  })
+  const hexFromRgb = formatRgb.map(el => {
+    const hexNum = Number(el).toString(16).toUpperCase()
+    return hexNum.length < 2 ? `0${hexNum}` : hexNum
+  })
+  return hexFromRgb.join("") 
+}
+
+console.log(rgb(15, 189, 87))
