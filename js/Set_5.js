@@ -1,7 +1,7 @@
 // 1. Implement the function unique_in_order which takes as argument a sequence and returns a list
 // of items without any elements with the same value next to each other and preserving the original order of elements.
 
-const uniqueInOrder = function (iterable) {
+const uniqueInOrder = function(iterable) {
   let result = []
   for (let i = 0; i < iterable.length; i++) {
     iterable[i] !== iterable[i + 1] ? result.push(iterable[i]) : null
@@ -161,7 +161,7 @@ zeros(217883360)
 
 const word = "A wise old owl lived in an oak"
 
-const encryptThis = function (text) {
+const encryptThis = function(text) {
   const words = text.split(" ")
   const encrypted = words.map(w => {
     if (w.length > 2) {
@@ -334,7 +334,7 @@ function evenOddTransform(arr, n) {
   let count = 0
   let newArray = [...arr]
   while (count < n) {
-    newArray = newArray.map(elem => elem % 2 === 0 ? elem - 2 : elem + 2)
+    newArray = newArray.map(elem => (elem % 2 === 0 ? elem - 2 : elem + 2))
     count += 1
   }
   return newArray
@@ -350,8 +350,20 @@ evenOddTransform(params[0], params[1])
 function alphabetized(s) {
   const regex = /[a-zA-Z]/g
   if (s.match(regex)) {
-    const letters = s.match(regex).map((l, i) => ({ letter: l, upper: l.toUpperCase().charCodeAt(), index: i }))
-    const sorted = letters.sort((a, b) => b.upper < a.upper ? 1 : b.upper === a.upper ? b.index > a.index ? -1 : 1 : -1)
+    const letters = s.match(regex).map((l, i) => ({
+      letter: l,
+      upper: l.toUpperCase().charCodeAt(),
+      index: i
+    }))
+    const sorted = letters.sort((a, b) =>
+      b.upper < a.upper
+        ? 1
+        : b.upper === a.upper
+        ? b.index > a.index
+          ? -1
+          : 1
+        : -1
+    )
     return sorted.map(el => el.letter).join("")
   } else {
     return ""
@@ -365,8 +377,8 @@ alphabetized("The Holy Bible")
 
 function puzzlePieces(a1, a2) {
   if (a1.length === a2.length) {
-  const sumArray = a1.map((elem, idx) => elem + a2[idx])
-  return Array.from(new Set(sumArray)).length === 1
+    const sumArray = a1.map((elem, idx) => elem + a2[idx])
+    return Array.from(new Set(sumArray)).length === 1
   }
   return false
 }
@@ -377,7 +389,7 @@ puzzlePieces([1, 2, 3, 4], [4, 3, 2, 1])
 
 function halveCount(a, b) {
   let counter = 0
-  while ((a / 2) > b) {
+  while (a / 2 > b) {
     a = a / 2
     counter++
   }
@@ -396,7 +408,9 @@ const names = `
 
 function lineupStudents(students) {
   const studentsArray = students.trim().split(" ")
-  studentsArray.sort((a, b) => a.length === b.length ? a > b ? -1 : 1 : b.length - a.length)
+  studentsArray.sort((a, b) =>
+    a.length === b.length ? (a > b ? -1 : 1) : b.length - a.length
+  )
   return studentsArray
 }
 
@@ -404,7 +418,18 @@ lineupStudents(names)
 
 // 27. Count items, put them into arrays in format [number, item]. Disregard items that are not in "veggies" array
 
-const veggies = ["cabbage", "carrot", "celery", "cucumber", "mushroom", "onion", "pepper", "potato", "tofu", "turnip"]
+const veggies = [
+  "cabbage",
+  "carrot",
+  "celery",
+  "cucumber",
+  "mushroom",
+  "onion",
+  "pepper",
+  "potato",
+  "tofu",
+  "turnip"
+]
 
 const items = `mushroom chopsticks chopsticks turnip mushroom carrot mushroom cabbage mushroom carrot tofu pepper cabbage potato cucumber 
  mushroom mushroom mushroom potato turnip chopsticks cabbage celery celery turnip pepper chopsticks potato potato onion cabbage cucumber 
@@ -414,20 +439,24 @@ const items = `mushroom chopsticks chopsticks turnip mushroom carrot mushroom ca
  mushroom cabbage tofu turnip turnip turnip mushroom tofu potato pepper turnip potato turnip celery carrot turnip`
 
 function countVegetables(string) {
-  const itemsArray = Array.from(new Set(string.trim().split(" "))).filter(el => veggies.includes(el)).map(el => [0, el])
+  const itemsArray = Array.from(new Set(string.trim().split(" ")))
+    .filter(el => veggies.includes(el))
+    .map(el => [0, el])
   const originalArray = string.split(" ")
   for (let i = 0; i < originalArray.length; i++) {
     for (let k = 0; k < itemsArray.length; k++) {
-      originalArray[i] === itemsArray[k][1] ? itemsArray[k][0] += 1 : 0
-      }
+      originalArray[i] === itemsArray[k][1] ? (itemsArray[k][0] += 1) : 0
     }
-  itemsArray.sort((a, b) => a[0] === b[0] ? a[1] > b[1] ? -1 : 1 : b[0] - a[0])
+  }
+  itemsArray.sort((a, b) =>
+    a[0] === b[0] ? (a[1] > b[1] ? -1 : 1) : b[0] - a[0]
+  )
   return itemsArray
 }
 
 countVegetables(items)
 
-// 28. Sort through the items in the box finding the coins and putting aside anything else. 
+// 28. Sort through the items in the box finding the coins and putting aside anything else.
 // "mon" value is 1, "monme" value is 60
 // Determine the minimum number of coins to pay for tofu. You must pay with exact change and if you do not have the correct change return “leaving the market”.
 // If the cost of tofu is higher than your total amount of money also return “leaving the market”.
@@ -439,8 +468,11 @@ function buyTofu(cost, box) {
   const monCount = coinsArray.filter(coin => coin === "mon").length
   const monMeCount = coinsArray.filter(coin => coin === "monme").length
   const coinsSum = monCount * 1 + monMeCount * 60
-  const coinsMonMeNumber = Math.floor(cost / 60) <= monMeCount ? Math.floor(cost / 60) : Math.floor(cost / 60) - monMeCount
-  const coinsMonNumber = (cost - coinsMonMeNumber * 60)
+  const coinsMonMeNumber =
+    Math.floor(cost / 60) <= monMeCount
+      ? Math.floor(cost / 60)
+      : Math.floor(cost / 60) - monMeCount
+  const coinsMonNumber = cost - coinsMonMeNumber * 60
   const coinsOverall = coinsMonMeNumber + coinsMonNumber
   if (coinsMonMeNumber > monMeCount || coinsMonNumber > monCount) {
     return "leaving the market"
@@ -462,4 +494,13 @@ function findZip(str) {
   return str.lastIndexOf(matchedZip[matchedZip.length - 1])
 }
 
-console.log(findZip(str))
+findZip(str)
+
+// 30. Check which of given words in array are the anagrams of the Word.
+
+function anagrams(word, words) {
+  const wordSet = word.split("").sort().join("")
+  return words.filter(w => wordSet === Array.from(w).sort().join(""))
+}
+
+anagrams("abba", ["aabb", "abcd", "bbaa", "dada"])
