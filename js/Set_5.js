@@ -526,4 +526,14 @@ function rgb(r, g, b){
   return hexFromRgb.join("") 
 }
 
-console.log(rgb(15, 189, 87))
+rgb(15, 189, 87)
+
+// 32. Create a function that takes two dates and returns the number of days between the first and second date.
+
+function getDays(date1, date2) {
+  const milisecondsDifferece = date1.getTime() - date2.getTime()
+  const days = Math.abs(milisecondsDifferece / (1000 * 60 * 60 * 24))
+  return days
+}
+
+getDays(new Date('December 29, 2018'), new Date('June 20, 2019'))

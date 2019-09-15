@@ -458,5 +458,3 @@ function findOdd(A) {
 }
 
 findOdd([1,1,3,6,6,10,10])
-
-
