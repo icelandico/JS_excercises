@@ -537,3 +537,13 @@ function getDays(date1, date2) {
 }
 
 getDays(new Date('December 29, 2018'), new Date('June 20, 2019'))
+
+// 33. Create a function that takes an array of numbers and return "Boom!" if the number 7 appears in the array.
+// Otherwise, return "there is no 7 in the array"
+
+function sevenBoom(arr) {
+  const nums = arr.map(String).filter(num => num.includes("7"))
+  return nums.length ? "Boom!" : "there is no 7 in the array"
+}
+
+sevenBoom([76, 55, 44, 32])
