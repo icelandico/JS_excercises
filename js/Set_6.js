@@ -27,3 +27,16 @@ function rangeOfNumbers(startNum, endNum) {
 };
 
 rangeOfNumbers(1, 5)
+
+// 3. Use Recursion to Create a Countdown
+
+function countdown(myArray, n) {
+  if (n <= 0) {
+    return []
+  } else {
+    myArray.push(n)
+    countdown(myArray, n - 1)
+  }
+}
+
+countdown(myArray, 10)
