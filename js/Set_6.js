@@ -13,3 +13,17 @@ function isCorrectAliases(names, aliases) {
 }
 
 isCorrectAliases(['Adrian M.', 'Harriet S.', 'Mandy T.'], ['Xmazing Artichoke', 'Hopeful Hedgehog', 'Marvelous Mouse'])
+
+// 2. Range of numbers using recursion
+
+function rangeOfNumbers(startNum, endNum) {
+  if (startNum === endNum) {
+    return [startNum]
+  } else {
+    var numbers = rangeOfNumbers(startNum, endNum - 1)
+    numbers.push(endNum)
+    return numbers
+  }
+};
+
+rangeOfNumbers(1, 5)
