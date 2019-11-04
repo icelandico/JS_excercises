@@ -39,4 +39,15 @@ function countdown(myArray, n) {
   }
 }
 
-countdown(myArray, 10)
+// countdown(myArray, 10)
+
+// 4. Create a function that takes an array of strings and returns
+// an array with only the strings that have numbers in them.
+// If there are no strings containing numbers, return an empty array.
+
+function numInStr(arr) {
+  const rgx = /\d/
+  return arr.filter(str => rgx.test(str))
+}
+
+console.log(numInStr(["1a", "a", "2b", "b"]))
